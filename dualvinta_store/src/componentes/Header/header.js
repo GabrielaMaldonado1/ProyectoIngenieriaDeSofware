@@ -5,12 +5,14 @@ import { HeaderLogo } from './LogoCarBuscarHeader';
 
 import '../../css/cssHeader.css';
 
-export const Header = () => {
+export const Header = ( {seccion, titulo}) => {
+    
+    
     return (
         <div className=" header-bg">
             <HeaderLogo />
-            <NavegacionPaginas />
-            <MarcoPaginaActual />
+            <NavegacionPaginas seccion={seccion}/>
+            <MarcoPaginaActual titulo={titulo}/>
            
         </div>
     )

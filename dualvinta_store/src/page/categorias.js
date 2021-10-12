@@ -1,10 +1,10 @@
 import React from 'react'
 import { Header } from '../componentes/Header/header'
 
-export const Home = () => {
+export const Categorias = () => {
     return (
         <div>
-            <Header seccion="inicio" titulo="INICIO"/>
+            <Header seccion="categorias" titulo="CATEGORIAS"/>
         </div>
     )
 }

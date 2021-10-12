@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../../data/img/DUALVINTA.png'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export const HeaderLogo = () => {
 
@@ -10,7 +11,7 @@ export const HeaderLogo = () => {
             <div className="row-Logo">
 
                 <ul className="logo-car">
-                    <li className="logo-empresa"> <a href=""><img src={Logo} alt="Logo" /></a></li>
+                    <li className="logo-empresa"> <Link to="/"><img src={Logo} alt="Logo" /></Link></li>
                     <li className="car-shop">
                         <ul className="car-contador">
                             <li className="car-logo-contador"><a><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#8fd8c6" fill="none" stroke-linecap="round" stroke-linejoin="round">
