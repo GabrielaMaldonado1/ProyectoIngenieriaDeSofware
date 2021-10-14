@@ -1,0 +1,133 @@
+:root {
+	--primario:  #eed09d;
+	--secundario:  #f2d8ad;
+	--alternativo:  #eccd6a;
+	--blanco: #FFF;
+	--negro: #000;
+
+	--fuentePrincipal:  'Staatliches', cursive;
+}
+
+.bg-login-registro{
+    width: 100%;
+    height: 640px;
+    background: url(../data/img/login_img.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login, .registro{
+  width: 410px;
+  height: 465px;
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 850px;
+  
+  background-color: #f5f5ef;
+  border: var(--alternativo);
+  border-radius: 10px;
+  border-style: solid;
+  
+}
+
+.registro{
+    margin-top: 70px;
+    height: 490px;
+}
+
+.h3__registro{
+    margin-top: 275px;
+    margin-left: 40px;
+}
+
+.img_logo{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.formulario-login{
+    position: absolute;
+    margin-top: 25px;
+    /*background-color: blueviolet;*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email__login, .password__login, .email__login1{
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    border: var(--alternativo);
+    border-style: solid;
+    border-width: 1.5px;
+    text-align: start;
+    padding-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+.email__login:focus, .password__login:focus{
+    outline: none;
+}
+
+.password__login{
+    margin-top: 15px;
+}
+
+.email__login{
+    margin-top: 15px;
+}
+
+.btn__login, .btn__registro{
+    width: 150px;
+    height: 30px;
+    margin-top: 28px;
+    border-radius: 10px;
+    background-color: var(--primario);
+    color: var(--negro);
+    border-style: solid;
+    border-width: 1.5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.btn__registro{
+    margin-top: 15px;
+}
+
+.Opciones_usuario, .Opciones_redes{
+    position: absolute;
+    margin-top: 200px;
+      
+}
+
+.OLcontraseña, .Registro, .google__login, .facebook__login{
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 37px;
+    color: var(--alternativo);
+}
+
+.p_login{
+    margin-top: 245px;
+    margin-left: 35px;
+}
+
+.Opciones_redes {
+    margin-top: 5px;
+}
+
+.Opciones_redes_login{
+    margin-top: 8px;
+}
+
+.google__login {
+    margin-left: 160px;
+}
+.facebook__login{
+    margin-left: 30px;  
+}
