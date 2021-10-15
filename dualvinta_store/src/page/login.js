@@ -48,10 +48,21 @@ export const Login = () => {
     } catch (error) {
       setLoading(false);
       setError('Wrong Credentials');
-      alert(errord);
+      alert("Los datos son incorrectos");
       setTimeout(() => setError(''), 1500);
 
     }
+  }
+
+  const mostrarContrasena = (e) => {
+      e.preventDefault();
+      alert("gr");
+      var tipo = document.getElementsByName("password");
+      if(tipo.type == "password"){
+          tipo.type = "text";
+      }else{
+          tipo.type = "password";
+      }
   }
 
     return (
@@ -64,9 +75,9 @@ export const Login = () => {
                 <input type="email" className="email__login" name="email" placeholder="Correo Electronico" autoComplete="on" required
                     onChange={handleInputChange} ></input>
 
-                <input type="password" className="password__login" name="password" placeholder="Contraseña" autoComplete="off" required
+                <input type="password" className="password__login" id="password" name="password" placeholder="Contraseña" autoComplete="off" required
                     onChange={handleInputChange}></input>
-                
+            
 
                 <input className="btn__login" type="submit" value="Iniciar Sesión"></input>
 
@@ -80,11 +91,11 @@ export const Login = () => {
             <p className="p_login">Puedes iniciar con tus redes sociales</p>
 
             <div className="Opciones_redes_login">
-                <a href="#" className="google__login"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-google" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+               <a href="#" className="google__login"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-google" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="#ff2825" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8" />
-                </svg></a>
-                <a href="#" className="facebook__login"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="#0000ff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+             </svg></a>
+                <a href="#" className="facebook__login"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="#0000ff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
                 </svg></a>
