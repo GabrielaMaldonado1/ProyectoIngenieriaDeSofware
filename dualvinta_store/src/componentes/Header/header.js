@@ -16,7 +16,6 @@ export const Header = ( {seccion, titulo}) => {
             <HeaderLogo />
             <NavegacionPaginas seccion={seccion}/>
             <MarcoPaginaActual titulo={titulo}/>
-           
         </div>
     )
 }

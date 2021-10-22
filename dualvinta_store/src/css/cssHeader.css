@@ -135,7 +135,7 @@ li.car-shop a {
       background-repeat: no-repeat;
       background-size: contain;
       
-      background-attachment: fixed;
+      background-attachment:fixed;
   }
 
 
@@ -156,7 +156,6 @@ li.car-shop a {
    
 }
 .navegacion {
-    scroll-snap-align: center;
     scroll-snap-stop: always;
     display: flex;
     flex-direction: column;
