@@ -1,17 +1,58 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import { useHistory } from 'react-router';
 
-export const HeaderNavUser = () => {
+export const HeaderNavUser = ( { userActive }) => {
+
+  const { currentUser, logout } = useAuth();
+
+  const history = useHistory();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      history.push('/');
+    } catch (error) {
+    }
+  }
+
+  const NoRegistro = () => {
+    return (
+      <>
+        <li><Link to="/login">Iniciar Sesión</Link></li>
+        <li><Link to="/registro">Registrarse</Link> </li>
+      </>
+    )
+  }
+
+  const Registrado = () => {
+    return (
+      <>
+        <li><Link to="/" onClick={handleLogout}>Cerrar Sesión</Link></li>
+      </>
+    )
+  }
+
+  const Logguedo = ({ active }) => {
+
+    if (active !== undefined) {
+      return <Registrado />
+    } else {
+      return <NoRegistro />
+    }
+
+  }
+
+
   return (
-
     <nav className="bg-nav">
       <div className="user-menu">
         <ul className="menu-usuario">
           <li><a href="#">Mi Cuenta</a> </li>
           <li><a href="#">Carro de Compras</a> </li>
           <li><a href="#">Pagar</a> </li>
-          <li><Link to="/login">Iniciar Sesión</Link> </li>
-          <li><Link to="/registro">Registrarse</Link> </li>
+          <Logguedo active={userActive} />
         </ul>
         <ul className="Social-header">
           <li><a href="http://facebook.com"><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-facebook" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#00abfb" fill="none" strokeLinecap="round" strokeLinejoin="round">

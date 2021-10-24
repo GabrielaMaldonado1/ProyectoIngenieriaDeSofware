@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import {fire} from '../database/UseFirebase';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
-
+import { GoogleAuthProvider } from "firebase/auth";
+import { FacebookAuthProvider, signInWithRedirect } from "firebase/auth";
 
 
 const AuthContext = createContext();
@@ -11,14 +12,6 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = (props) => {
 
     const [currentUser, setCurrentUser] = useState('');
-
-    /* useEffect(() => {
-         
-         onAuthStateChanged((user) => {
-             setCurrentUser(user);
-         })
-     }, [])*/
-
 
     const signup = (email, password) => {
         const aut = getAuth();
@@ -36,7 +29,27 @@ export const AuthProvider = (props) => {
         signOut(aut)
     };
 
-    const value = { signup, login, logout };
+
+    const signupGoogle = () => {
+        const provider = new GoogleAuthProvider();
+
+        const auth = getAuth();
+
+        signInWithRedirect(auth, provider);
+
+    }
+
+    const signupFacebook = () => {
+
+        const provider = new FacebookAuthProvider();
+
+        const auth = getAuth();
+
+        signInWithRedirect(auth, provider);
+
+    }
+
+    const value = { signup, login, logout, signupGoogle, signupFacebook };
 
     return (
         <AuthContext.Provider value={value}>
