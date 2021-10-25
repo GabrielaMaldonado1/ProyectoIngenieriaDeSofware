@@ -8,19 +8,9 @@ import { UseStateUser } from '../hooks/UseStateUser'
 export const Home = () => {
 
     const userActive = UseStateUser();
-   
-    const datos = () => {
 
-        if(userActive !== undefined ){
             console.log( userActive.displayName );
-        }
-    }
-
-    useEffect(() => {
-        datos();
-        
-    }, [] )
-    
+ 
 
     return (
         <div>
@@ -30,3 +20,4 @@ export const Home = () => {
         </div>
     )
 }
+
