@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.card{
+  align-content: center;
+  border: 5px solid grey;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+  padding: 10px;
+  
+}
+.card:hover{
+  background-color: bisque;
+}
+
+.card p{
+  padding: 5px;
+  
+}
+
+.card img{
+  max-height: 170px;
+
+  
+}
+
+.card-grid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
