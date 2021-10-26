@@ -9,7 +9,7 @@ export const Home = () => {
 
     const userActive = UseStateUser();
 
-            console.log( userActive );
+            console.log( userActive.displayName );
  
 
     return (
