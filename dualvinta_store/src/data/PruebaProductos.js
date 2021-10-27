@@ -10,7 +10,7 @@ const dbCompras = [
         id_compra:"",
         id_producto: "",
         cantidad_vendida: "",
-        fecha : new Date(),
+        fecha : new Date("1995-12-17T03:24:00"),
     }
 ]
 
@@ -19,7 +19,7 @@ const dbCompras = [
         id:"1",
         nombre: "Camisa Para Hombre",
         precio: 250,
-        fecha: new Date().toDateString(),
+        fecha: new Date("2020-12-17T03:24:00"),
         detalles: "Camisa de botones color verde, estilo militar, talla M",
         talla: 'M',
         marca:"AMERICAM RAG",
@@ -34,7 +34,7 @@ const dbCompras = [
         id:"2",
         nombre: "CAMISA POLO",
         precio: 300,
-        fecha: new Date().toDateString(),
+        fecha: new Date("2021-10-17T03:24:00"),
         detalles: "Camisa estilo polo, color gris, talla S",
         talla: 'S',
         marca:"DESERT",
@@ -49,7 +49,7 @@ const dbCompras = [
         id:"3",
         nombre: "Camiseta",
         precio: 150,
-        fecha: new Date().toDateString(),
+        fecha: new Date("2020-11-11T03:24:00"),
         detalles: "Camisa de algodon color ocre, talla M",
         talla: 'M',
         marca:"Holliester",
@@ -64,9 +64,8 @@ const dbCompras = [
         id:"4",
         nombre: "CREMAS CERAVE",
         precio: 340,
-        fecha: new Date().toDateString(),
+        fecha: new Date("2020-12-18T03:24:00"),
         detalles: "Cremas faciales CeraVe",
-        talla: '',
         marca:"CeraVe",
         modelo:"USA",
         serie:"N/A",
@@ -77,11 +76,10 @@ const dbCompras = [
     },
     {
         id:"5",
-        nombre: "Peeling Solution",
+        nombre: "Peeling Solution AHA 30% + BHA 2%",
         precio: 350,
-        fecha: new Date().toDateString(),
+        fecha: new Date("2021-09-11T03:24:00"),
         detalles: "Suaviza el aspecto de la textura de la piel dando un aspecto más radiante",
-        talla: '',
         marca:"The Ordinary",
         modelo:"USA",
         serie:"N/A",
@@ -94,7 +92,7 @@ const dbCompras = [
         id:"6",
         nombre: "VESTIDO",
         precio: 450,
-        fecha: new Date().toDateString(),
+        fecha: new Date("2021-10-01T03:24:00"),
         detalles: "Vestido con estampado color naranja, talla L",
         talla: 'L',
         marca:"Main Strip",
@@ -114,18 +112,6 @@ export function find(id){
 
     if(t.length > 0){
         return t[0];
-    }else{
-        return undefined;
-    };
-};
-
-export function findByCategory(categoria){
-    const t = dbProductos.filter(v=>{
-        return v.categoria === categoria
-    });
-
-    if(t.length > 0){
-        return t;
     }else{
         return undefined;
     };

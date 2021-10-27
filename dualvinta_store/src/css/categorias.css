@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 :root {
 	--primario:  #eed09d;
@@ -59,3 +60,57 @@ align-items: center;
   
 }
 
+=======
+
+:root {
+	--primario:  #eed09d;
+	--secundario:  #f2d8ad;
+	--alternativo:  #eccd6a;
+	--blanco: #FFF;
+	--negro: #000;
+
+	--fuentePrincipal:  'Staatliches', cursive;
+}
+
+/* CATEGORIAS */
+.OpcCategorias{
+    width: 90%;
+    height: 200px;
+    background-color: var(--secundario);
+    margin-left: 50px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: var(--alternativo);
+    margin-top: 30px;
+}
+
+
+    /*opciones */
+
+.OpcIndividual{
+width: 120px;
+height: 175px;
+margin-top: 20px;
+margin-left: 15px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.OpcIndividual__img{
+  border-style: none;
+  border-width: 0px;
+  border-radius: 70px;
+  overflow: hidden;
+}
+
+.img_categorias{
+  width: 80px;
+  height: 120px;
+}
+
+.OpcIndividual h5{
+  margin-top: 10px;
+}
+>>>>>>> 0f74cbed21fe7a42f2dffb9f72fd74f5614e23d1

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { Categorias } from './page/categorias';
-import CuidadoPersonal from './page/CuidadoPersonal';
+import { CuidadoPersonal } from './page/CuidadoPersonal';
 import DetallesProducto from './page/DetallesPorProductos';
 import { Home } from './page/Home';
 import { Login } from './page/login';

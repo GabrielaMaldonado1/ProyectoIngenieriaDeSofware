@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { OpcIndividual } from './OpcIndividual';
 import React, { useEffect, useState } from "react";
@@ -29,3 +30,16 @@ export const OpcCategorias = ({ img,nombreCat}) => {
     )
 }
 export default OpcCategorias;
+=======
+import React from 'react'
+import { OpcIndividual } from './OpcIndividual'
+
+export const OpcCategorias = () => {
+    return (
+        <div className="OpcCategorias">
+       <OpcIndividual />
+            
+        </div>
+    )
+}
+>>>>>>> 0f74cbed21fe7a42f2dffb9f72fd74f5614e23d1
