@@ -1,14 +1,12 @@
 import React from 'react'
-import GifGrid from '../componentes/Categorias/CategorySalud/GifGrid'
 import { Header } from '../componentes/Header/header'
+import { GifExpertApp } from '../GifExpertApp'
 
-const CuidadoPersonal = () => {
+export const CuidadoPersonal = () => {
     return (
         <div>
             <Header seccion="cuidado" titulo="CUIDADO PERSONAL"/>
-            <GifGrid title="CUIDADO PERSONAL" category="CUIDADO PERSONAL" />
+            <GifExpertApp  />
         </div>
     )
-};
-
-export default CuidadoPersonal;
+}

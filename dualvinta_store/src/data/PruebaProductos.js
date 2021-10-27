@@ -66,7 +66,6 @@ const dbCompras = [
         precio: 340,
         fecha: new Date().toDateString(),
         detalles: "Cremas faciales CeraVe",
-        talla: '',
         marca:"CeraVe",
         modelo:"USA",
         serie:"N/A",
@@ -77,11 +76,10 @@ const dbCompras = [
     },
     {
         id:"5",
-        nombre: "Peeling Solution",
+        nombre: "Peeling Solution AHA 30% + BHA 2%",
         precio: 350,
         fecha: new Date().toDateString(),
         detalles: "Suaviza el aspecto de la textura de la piel dando un aspecto más radiante",
-        talla: '',
         marca:"The Ordinary",
         modelo:"USA",
         serie:"N/A",
@@ -114,18 +112,6 @@ export function find(id){
 
     if(t.length > 0){
         return t[0];
-    }else{
-        return undefined;
-    };
-};
-
-export function findByCategory(categoria){
-    const t = dbProductos.filter(v=>{
-        return v.categoria === categoria
-    });
-
-    if(t.length > 0){
-        return t;
     }else{
         return undefined;
     };
