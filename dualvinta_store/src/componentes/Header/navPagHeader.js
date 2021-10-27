@@ -28,8 +28,9 @@ export const NavegacionPaginas = ( {seccion} ) => {
             <a className={ verificar("pagar") } href="#">Pagar</a>
             <a className={ verificar("nosotros") } href="#">Nosotros</a>
         </nav>
-       </div>
         
+       </div>
+       
        </>
     )
 }

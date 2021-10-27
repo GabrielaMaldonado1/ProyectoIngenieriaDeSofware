@@ -72,7 +72,8 @@ export const HeaderNavUser = ( { userActive }) => {
      
       </div>
 
-      
+       
     </nav>
+    
   )
 }
