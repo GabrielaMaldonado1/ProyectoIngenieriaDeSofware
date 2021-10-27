@@ -44,15 +44,3 @@ code {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-.propies{
-  
-  height: 300px;
-  background-size: cover;
-  display: flex;
-  
-}
-.imgs{
-  width: 33.3%;
-  height: 300px;
-}
