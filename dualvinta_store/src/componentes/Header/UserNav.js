@@ -2,8 +2,13 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useHistory } from 'react-router';
+import { UseStateUser } from '../../hooks/UseStateUser';
 
-export const HeaderNavUser = ( { userActive }) => {
+export const HeaderNavUser = () => {
+
+  const userActive = UseStateUser();
+
+  console.log( userActive );
 
   const { currentUser, logout } = useAuth();
 

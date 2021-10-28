@@ -1,8 +1,6 @@
 
 import React from 'react'
 
-import img_opc1 from '../../data/img/categorias/mujer/pantalones.jpg'
-
 export const OpcIndividual = ( { element } ) => {
 
     return (

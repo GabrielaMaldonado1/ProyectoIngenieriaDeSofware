@@ -7,12 +7,12 @@ import '../../css/cssHeader.css';
 import { HeaderNavUser } from './UserNav';
 
 
-export const Header = ( {seccion, titulo, userActive}) => {
+export const Header = ( {seccion, titulo}) => {
     
     
     return (
         <div className=" header-bg">
-            <HeaderNavUser userActive={userActive} />            
+            <HeaderNavUser  />            
             <HeaderLogo />
             <NavegacionPaginas seccion={seccion}/>
             <MarcoPaginaActual titulo={titulo}/>

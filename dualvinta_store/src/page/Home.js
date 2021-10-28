@@ -9,15 +9,10 @@ import "../css/pages.css";
 
 
 export const Home = () => {
-
-    const userActive = UseStateUser();
-
-            console.log( userActive );
  
-
     return (
         <div>
-            <Header seccion="inicio" titulo="INICIO" userActive={userActive} />
+            <Header seccion="inicio" titulo="INICIO" />
             
             <OfertasHome />
             <LstProductos titulo="NUEVOS PRODUCTOS" sort />

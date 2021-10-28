@@ -8,7 +8,7 @@ export const AreaSeccionCategoria = () => {
             <h2 className="titulo_area">VESTIMENTA</h2>
 
             <CategoriasGeneral />
-            <CategoriasGeneral />
+            
 
         </div>
     )

@@ -19,7 +19,7 @@ const dbProductos = [
         id: "1",
         nombre: "Camisa Para Hombre",
         precio: 250,
-        fecha: new Date("2020-12-17T03:24:00"),
+        fecha: "2020-12-17T03:24:00",
         detalles: "Camisa de botones color verde, estilo militar, talla M",
         talla: 'M',
         marca: "AMERICAM RAG",
@@ -34,7 +34,7 @@ const dbProductos = [
         id: "2",
         nombre: "CAMISA POLO",
         precio: 300,
-        fecha: new Date("2021-10-17T03:24:00"),
+        fecha: "2021-10-17T03:24:00",
         detalles: "Camisa estilo polo, color gris, talla S",
         talla: 'S',
         marca: "DESERT",
@@ -49,7 +49,7 @@ const dbProductos = [
         id: "3",
         nombre: "Camiseta",
         precio: 150,
-        fecha: new Date("2020-11-11T03:24:00"),
+        fecha: "2020-11-11T03:24:00",
         detalles: "Camisa de algodon color ocre, talla M",
         talla: 'M',
         marca: "Holliester",
@@ -64,7 +64,7 @@ const dbProductos = [
         id: "4",
         nombre: "CREMAS CERAVE",
         precio: 340,
-        fecha: new Date("2020-12-18T03:24:00"),
+        fecha: "2020-12-18T03:24:00",
         detalles: "Cremas faciales CeraVe",
         marca: "CeraVe",
         modelo: "USA",
@@ -78,7 +78,7 @@ const dbProductos = [
         id: "5",
         nombre: "Peeling Solution",
         precio: 350,
-        fecha: new Date("2021-09-11T03:24:00"),
+        fecha: "2021-09-11T03:24:00",
         detalles: "Suaviza el aspecto de la textura de la piel dando un aspecto más radiante",
         marca: "The Ordinary",
         modelo: "USA",
@@ -92,7 +92,7 @@ const dbProductos = [
         id: "6",
         nombre: "VESTIDO",
         precio: 450,
-        fecha: new Date("2021-10-01T03:24:00"),
+        fecha: "2021-10-01T03:24:00",
         detalles: "Vestido con estampado color naranja, talla L",
         talla: 'L',
         marca: "Main Strip",
@@ -103,30 +103,18 @@ const dbProductos = [
         imagen: img6,
         ventas_totales: 7,
     },
-    {
-        id: "7",
-        nombre: "VESTIDO",
-        precio: 450,
-        fecha: new Date("2021-10-01T03:24:00"),
-        detalles: "Vestido con estampado color naranja, talla L",
-        talla: 'L',
-        marca: "Main Strip",
-        modelo: "N/A",
-        serie: "N/A",
-        categoria: "ROPA FEMENINA",
-        cantidad: 5,
-        imagen: img6,
-        ventas_totales: 7,
-    },
+    
 ];
 
 export function find(id) {
     const t = dbProductos.filter(v => {
         return v.id === id
     });
+   
 
     if (t.length > 0) {
-        return t[0];
+         console.log(t[0])
+         return t[0];
     } else {
         return undefined;
     };
@@ -136,7 +124,7 @@ export function sortByDate() {
 
     const t = dbProductos.filter(v => { return true });
 
-    return t.sort((a, b) => { return b.fecha.getTime() - a.fecha.getTime() });
+    return t;
 
 }
 
