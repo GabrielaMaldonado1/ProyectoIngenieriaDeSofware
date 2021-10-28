@@ -1,9 +1,10 @@
 import React from 'react'
+import { CategoriasGeneral } from '../componentes/Categorias/CategoriasGeneral';
+import { AreaSeccionCategoria } from '../componentes/Categorias/CategorySalud/AreaSeccionCategoria';
 import { OpcCategorias } from '../componentes/Categorias/OpcCategorias'
 import { OpcIndividual } from '../componentes/Categorias/OpcIndividual';
 import { Header } from '../componentes/Header/header'
 
-import '../css/categorias.css';
 
 export const Categorias = () => {
     
@@ -12,7 +13,7 @@ export const Categorias = () => {
         <div>
             <Header seccion="categorias" titulo="CATEGORIAS"/>
     
-            <OpcIndividual />
+            <AreaSeccionCategoria />
         </div>
     )
 }

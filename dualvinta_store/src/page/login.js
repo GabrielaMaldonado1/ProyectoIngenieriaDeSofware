@@ -123,7 +123,7 @@ export const Login = () => {
             </form>
 
             <div className="Opciones_usuario">
-                <a href="#" className="OLcontraseña">Recuperar Contraseña</a>
+                <Link to="/rcontraseña" className="OLcontraseña">Recuperar Contraseña</Link>
                 <Link to='/registro' className="Registro">Registrarse</Link>
             </div>
 

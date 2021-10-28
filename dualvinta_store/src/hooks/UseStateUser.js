@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-export const UseStateUser = async () => {
+export const UseStateUser =  () => {
 
     const [state, setState] = useState();
 

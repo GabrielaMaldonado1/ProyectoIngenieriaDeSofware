@@ -6,7 +6,9 @@ import DetallesProducto from './page/DetallesPorProductos';
 import { Home } from './page/Home';
 import { Login } from './page/login';
 import PruebaProducto from './page/PruebaProductos';
+import { RecuperarContraseña } from './page/RecuperarContraseña';
 import { SignUp } from './page/registro';
+import { Vestimenta } from './page/vestimenta';
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                         <Route exact path="/registro" component={ SignUp } />
                         <Route exact path="/lesly" component={PruebaProducto} />
                         <Route exact path="/detalles_de_producto/:id" component={DetallesProducto} />
+                        <Route exact path="/vestimenta" component={ Vestimenta } />
+                        <Route exact path="/rcontraseña" component={ RecuperarContraseña } />
                     </Switch>
                 </AuthProvider>
             </Router>

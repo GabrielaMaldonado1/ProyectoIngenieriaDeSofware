@@ -1,34 +1,43 @@
-import img1 from "./img/Productos/1.jpeg";
-import img2 from "./img/Productos/2.jpeg";
-import img3 from "./img/Productos/3.jpeg";
-import img4 from "./img/Productos/4.jpeg";
-import img5 from "./img/Productos/5.jpeg";
-import img6 from "./img/Productos/6.jpeg";
+import pantalones from "./img/categorias/mujer/pantalones.jpg"
+import abrigos from "./img/categorias/mujer/abrigos.jpg"
+import blusas from "./img/categorias/mujer/blusas.jpg"
+import camisetas from "./img/categorias/mujer/camisetas.jpg"
+import vestidos from "./img/categorias/mujer/vestidos.jpg"
 
 
 
 const dbCategoria = [
     {
-        id_cat:"1",
-        nombreCat: "Vestimenta",
-        img: img2,
+        id:"1",
+        nombreCat: "ABRIGOS",
+        img: abrigos,
     },
     {
         id:"2",
-        nombreCat: "crema",
-        img: img3,
+        nombreCat: "BLUSAS",
+        img: blusas,
 
     },
     {
         id:"3",
-        nombreCat: "vestimenta",
-        img: img4,
-    }     
+        nombreCat: "CAMISETAS",
+        img: camisetas,
+    },
+    {
+        id:"4",
+        nombreCat: "PANTALONES",
+        img: pantalones,
+    },
+    {
+        id:"5",
+        nombreCat: "VESTIDOS",
+        img: vestidos,
+    }      
 ]
 
 export function find(id){
     const t = dbCategoria.filter(v=>{
-        return v.id_cat === id
+        return v.id === id
     });
 
     if(t.length > 0){
