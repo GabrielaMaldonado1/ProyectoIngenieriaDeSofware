@@ -2,9 +2,8 @@ import React from 'react'
 import { NavegacionPaginas } from './navPagHeader';
 import { MarcoPaginaActual } from './marcoPaginaActual';
 import { HeaderLogo } from './LogoCarBuscarHeader';
-
-import '../../css/cssHeader.css';
 import { HeaderNavUser } from './UserNav';
+import '../../css/cssHeader.css';
 
 
 export const Header = ( {seccion, titulo}) => {

@@ -1,15 +1,15 @@
 import React from "react";
 import { Header } from '../componentes/Header/header'
-import DetaProducts from "../componentes/Productos/DetaProductos";
+import ViewUser from "../componentes/Usuarios/ViewUser";
 
-const DetallesProducto = () => {
-    
+const DetallesUsuario = () => {
+  
     return(
         <div>
             <Header seccion="inicio" titulo="Producto" />
-            <DetaProducts />
+            <ViewUser />
         </div>
     )
 };
 
-export default DetallesProducto;
+export default DetallesUsuario;

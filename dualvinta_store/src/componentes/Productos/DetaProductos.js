@@ -22,8 +22,7 @@ const DetaProducts = () => {
     const { nombre, imagen, categoria, detalles, marca, modelo, precio, cantidad, fecha } = producto;
     console.log( nombre);
 
-    return (
-        <>
+    return (  
         <div className="rounded shadow-sm container-fluid py-4" style={{ marginTop: 40 }}>
             <h4 className="py-2"><b>Detalles de Producto</b></h4>
             <hr style={{ backgroundColor: "#F5DA81" }} />
@@ -52,8 +51,6 @@ const DetaProducts = () => {
                 </div>
             </div>
         </div>
-
-        </>
     )
 };
 
