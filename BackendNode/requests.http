@@ -1,0 +1,36 @@
+###
+
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Alexa Ramos",
+    "age": 22,
+    "email": "AlexaR@unah.hn"
+}
+
+###
+
+GET http://localhost:9000/api/users HTTP/1.1
+
+###
+
+GET http://localhost:9000/api/producto/ropa%20femenina HTTP/1.1
+
+###
+
+PUT http://localhost:9000/api/users/61865b8106fea588fdfabd79 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Alexa Nicol Ramos",
+    "age": 22,
+    "email": "AlexaR@unah.hn"
+}
+
+###
+
+DELETE http://localhost:9000/api/users/61865b8106fea588fdfabd79 HTTP/1.1
+
+###
+

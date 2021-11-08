@@ -8,7 +8,7 @@ export const HeaderNavUser = () => {
 
   const userActive = UseStateUser();
 
-  console.log( userActive );
+  //console.log( userActive );
 
   const { currentUser, logout } = useAuth();
 
