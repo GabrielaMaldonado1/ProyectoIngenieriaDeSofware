@@ -11,9 +11,9 @@ const ViewProducto = ({ element }) => {
             <div className="rounded shadow-sm" style={{ borderStyle: "solid", borderWidth: 1, borderColor: "#F5DA81" }}>
                 <div className="container-fluid py-2">
                     <div>
-                        <img src={element.imagen} alt="altproducto" width="100%" height={(window.innerWidth > window.innerHeight)? "200" : ""} />
+                        <img src={element.imgUrl} alt="altproducto" width="100%" height={(window.innerWidth > window.innerHeight)? "200" : ""} />
                         <h6 className="py-3">
-                            {element.nombre}
+                            {element.name}
                         </h6>
                         <p className="">
                             {element.precio} LPS

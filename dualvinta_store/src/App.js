@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { FormProducto } from './admin/formProducto';
 import { AuthProvider } from './context/AuthContext';
 import { Categorias } from './page/categorias';
 import { CuidadoPersonal } from './page/CuidadoPersonal';
@@ -7,7 +8,7 @@ import DetallesUsuario from './page/DetallesPorUsuario';
 import { Home } from './page/Home';
 import { Login } from './page/login';
 import PruebaProducto from './page/PruebaProductos';
-import { RecuperarContraseña } from './page/RecuperarContraseña';
+import { RecuperarContraseña } from './page/RecuperarContrasena';
 import { SignUp } from './page/registro';
 import { Vestimenta } from './page/vestimenta';
 
@@ -26,6 +27,7 @@ function App() {
                     <Route exact path="/users/:id" component={DetallesUsuario} />
                     <Route exact path="/vestimenta" component={Vestimenta} />
                     <Route exact path="/rcontraseña" component={RecuperarContraseña} />
+                    <Route exact path="/formProducto" component={FormProducto} />
                 </Switch>
             </AuthProvider>
         </Router>
