@@ -56,9 +56,6 @@ export const Home = () => {
             <Header seccion="inicio" titulo="INICIO" />
 
             <OfertasHome />
-            {
-                if(newpro)
-            }
 
         </div>
     )

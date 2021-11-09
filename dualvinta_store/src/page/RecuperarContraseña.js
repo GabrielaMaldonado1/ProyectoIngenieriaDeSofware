@@ -7,7 +7,7 @@ import '../css/cssLoginRegistro.css';
 
 import { useHistory } from 'react-router';
 
-export const RecuperarContraseña = () => {
+export const RecuperarContrasena = () => {
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
