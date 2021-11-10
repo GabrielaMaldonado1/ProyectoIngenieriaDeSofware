@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { findUser } from "../../data/PruebaUsuarios";
 import m from "../../data/img/usuarios_image/user.png"
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
+import { Table } from "react-bootstrap";
 
 const ViewUser = () => {
 
@@ -77,6 +78,7 @@ const Direcciones = () => {
     return (
         <div>
             Mis Direcciones
+            
         </div>
     )
 };
@@ -84,7 +86,37 @@ const Direcciones = () => {
 const Ordenes = () => {
     return (
         <div>
-            Mis Ordenes
+            Mas resientes
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                    <th>#</th>
+                    <th>fecha</th>
+                    <th>hora</th>
+                    <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>1</td>
+                    <td>10/10/2021</td>
+                    <td>11:26 am</td>
+                    <td>Vestido color fusia, talla "M"</td>
+                    </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>12/11/2021</td>
+                    <td>10:30 am</td>
+                    <td>Camisa de mujer color ocre talla "M"</td>
+                    </tr>
+                    <tr>
+                    <td>3</td>
+                    <td>10/12/2021</td>
+                    <td>4:30 pm</td>
+                    <td>Pantalon de hombre talla "36"</td>
+                    </tr>
+                </tbody>
+            </Table>
         </div>
     )
 };
