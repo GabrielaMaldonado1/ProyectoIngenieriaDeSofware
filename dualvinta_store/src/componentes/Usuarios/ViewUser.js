@@ -1,12 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { findUser } from "../../data/PruebaUsuarios";
 import m from "../../data/img/usuarios_image/user.png"
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
-import { Table } from 'react-bootstrap';
-
 
 const ViewUser = () => {
 
@@ -88,38 +84,7 @@ const Direcciones = () => {
 const Ordenes = () => {
     return (
         <div>
-            Mas recientes
-            
-            <Table striped bordered hover size="sm">
-                <thead>
-                    <tr>
-                    <th>#</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Descripcion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>1</td>
-                    <td>13/12/2021</td>
-                    <td>10:30 AM</td>
-                    <td>Vestido de mujer, color ocre, talla "M"</td>
-                    </tr>
-                    <tr>
-                    <td>2</td>
-                    <td>5/10/2021</td>
-                    <td>4:30 pm</td>
-                    <td>Vestido de mujer, color ocre, talla "M"</td>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                    <td>25/9/2021</td>
-                    <td>12:15 md</td>
-                    <td>Vestido de mujer, color ocre, talla "M"</td>
-                    </tr>
-                </tbody>
-            </Table>
+            Mis Ordenes
         </div>
     )
 };

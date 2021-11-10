@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { Carousel } from 'react-bootstrap';
 
 import img1 from "../data/img/inicio/calzado_descuento.png";
-import img2 from "../data/img/inicio/DUALVINTA_STORE_hallo.png";
+import img2 from "../data/img/inicio/3.jpeg";
 import img3 from "../data/img/inicio/OFERTAS_PARA_SEMANA_SANTA.png";
 
 export const OfertasHome = () => {
@@ -64,4 +65,41 @@ export const OfertasHome = () => {
 
         </div>
     )
+};
+
+
+const CarouselLesly = () => {
+    return (
+        <div className="container-fluid d-flex justify-content-center py-2">
+        <Carousel style={{width:"90%", height:"400px"}}>
+            <Carousel.Item interval={5000}>
+                <img
+                    className="d-block w-100"
+                    height="400px"
+                    src={img1}
+                    alt="First slide"
+                    
+                />
+            </Carousel.Item>
+            <Carousel.Item interval={5000}>
+                <img
+                    className="d-block w-100"
+                    height="400px"
+                    src={img2}
+                    alt="Second slide"
+                />
+            </Carousel.Item>
+            <Carousel.Item  interval={5000}>
+                <img
+                    className="d-block w-100"
+                    height="400px"
+                    src={img3}
+                    alt="Third slide"
+                />
+            </Carousel.Item>
+        </Carousel>
+        </div>
+    )
 }
+
+export default CarouselLesly;

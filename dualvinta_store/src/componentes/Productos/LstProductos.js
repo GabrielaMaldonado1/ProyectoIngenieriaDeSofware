@@ -3,27 +3,17 @@ import ViewProducto from "./ViewProducto";
 
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
 import "../../css/pages.css";
-import { searchByName } from "../../data/PruebaProductos";
+import dbProductos, { searchByName, sortByDate } from "../../data/PruebaProductos";
 
-const LstProductos = ({ titulo, productoArray }) => {
+const LstProductos = ({ titulo, sort }) => {
 
-    const [productos, SetProductos] = useState( [] );
+    const [productos, SetProductos] = useState([]);
     const [update, setUpdate] = useState(true);
-
-   // console.log(productoArray);
-
-    if( productoArray !== undefined){
-        const respuesta = productoArray;
-            SetProductos(respuesta);
-            setUpdate(false);
-    }else{
-        
-    }
 
     useEffect(() => {
         if (update) {
             //crea la funcion que llamara los datos
-            const respuesta = productoArray;
+            const respuesta = sort ? sortByDate() : dbProductos;
             SetProductos(respuesta);
             setUpdate(false);
         };

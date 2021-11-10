@@ -27,8 +27,10 @@ const DetaProducts = () => {
             <h4 className="py-2"><b>Detalles de Producto</b></h4>
             <hr style={{ backgroundColor: "#F5DA81" }} />
             <div className="row">
-                <div className="col-md-6">
-                    <img src={imagen} alt="imagenProducto" width="100%" />
+                <div className="col-md-6 d-flex text-center" style={{ alignItems: "center" }}>
+                    <div>
+                        <img src={imagen} alt="imagenProducto" width="40%" />
+                    </div>
                 </div>
                 <div className="col-md-6 d-flex justify-component-center" style={{ alignItems: "center" }}>
                     <div>
@@ -50,6 +52,7 @@ const DetaProducts = () => {
                     </div>
                 </div>
             </div>
+            <hr style={{ backgroundColor: "#F5DA81" }} />
         </div>
     )
 };
