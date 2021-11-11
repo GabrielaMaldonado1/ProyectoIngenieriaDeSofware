@@ -77,7 +77,32 @@ const MyUser = () => {
 const Direcciones = () => {
     return (
         <div>
-            Mis Direcciones
+         
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                    <th>Numero de direccion</th>
+                    <th>Pais</th>
+                    <th>Departamento</th>
+                    <th>Ciudad</th>
+                    <th>Carretera</th>
+                    <th>Telefono</th>
+                    <th>Numero de orden</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>1</td>
+                    <td>Honduras</td>
+                    <td>Colon</td>
+                    <td>Tocoa</td>
+                    <td>1ra avenida contiguo a elektra</td>
+                    <td>50496522252</td>
+                    <td>1</td>
+                    </tr>
+                    
+                </tbody>
+            </Table>
             
         </div>
     )
