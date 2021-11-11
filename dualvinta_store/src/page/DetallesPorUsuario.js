@@ -6,7 +6,7 @@ const DetallesUsuario = () => {
   
     return(
         <div>
-            <Header seccion="inicio" titulo="PERFIL" />
+            <Header seccion="none" titulo="PERFIL" />
             <ViewUser />
         </div>
     )
