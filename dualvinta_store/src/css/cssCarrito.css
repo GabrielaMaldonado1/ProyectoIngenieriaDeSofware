@@ -1,0 +1,253 @@
+
+:root {
+	--primario:  #eed09d;
+	--secundario:  #f2d8ad;
+	--alternativo:  #eccd6a;
+	--blanco: #FFF;
+	--negro: #000;
+
+	--fuentePrincipal:  'Arial';
+}
+
+hr {
+    color: var(--negro);
+}
+
+.carroCompras{
+  width: 98%;
+  margin-left: 15px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+    /* HEADER DEL CARRITO */
+.headerCarrito{
+    height: 150px;
+    
+}
+
+.titulo{
+    
+    width: 50%;
+
+}
+
+.precios{
+
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 4px;
+    width: 280px;
+    height: 120px;
+    position: absolute;
+    margin-left: 180px;
+    margin-top: 25px;
+}
+
+.subtotal__carrito, .impuesto__carrito, .total__carrito {
+    position: absolute;
+    margin-left: 15px;
+}
+
+.subtotal__carrito{
+    margin-top: 5px;
+}
+
+.impuesto__carrito{
+    margin-top: 45px;
+}
+
+.total__carrito{
+    margin-top: 85px;
+}
+
+.p_precios{
+    margin-left: 25px;
+    width: 130px;
+}
+
+.p_precios p, .numPrecio, .LPS {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.numPrecio{
+    width: 70px;
+}
+
+/* INFORMACION Y BOTON HEADER */
+
+.informacionPagar{
+    width: 50%;
+}
+
+.informacion{
+    width: 350px;
+    position: absolute;
+    margin-left: 290px;
+    margin-top: 22px;
+}
+
+.informacion p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.BotonPagar{
+    background-color: var(--alternativo);
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 455px;
+    width: 70px;
+    height: 25px;
+    text-align: center;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 15px;
+
+}
+
+/* BODY CARRO DE COMPRAS */
+
+.Header__bodyCarrito{
+    background-color: var(--primario);
+}
+
+.header__bodyCarrito__Cantidad{
+    margin-left: 35px;
+    margin-top: 10px;
+    width: 150px;
+}
+
+.header__bodyCarrito__Producto{
+    width: 450px;
+    margin-top: 10px;
+}
+
+.header__bodyCarrito__Fecha{
+    width: 300px;
+    margin-top: 10px;
+
+}
+
+.header__bodyCarrito__Precio{
+    width: 200px;
+    margin-top: 10px;
+}
+
+.header__bodyCarrito__Total{
+    width: 200px;
+    margin-top: 10px;
+}
+
+.textCenter{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+/* ITEM */
+
+.itemCarro{
+    margin-top: 40px;
+    height: 150px;
+}
+
+.cantidad{
+     margin-left: 35px;
+    width: 150px;
+    height: 150px;
+}
+
+.CantidadNumber{
+    width: 60px;
+    margin-top: 20px;
+    margin-left: 45px;
+    border-radius: 5px;
+    text-align: center;
+    border-width: 1px;
+}
+
+.RemoverItem{
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 90px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.item{
+    width: 450px;
+    height: 150px;
+
+}
+
+/* ITEM INFO */
+
+.imgDiv__infoItem{
+    margin-left: 35px;
+    margin-right: 45px;
+    margin-top: 10px;
+    width: 100px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.imgProducto{
+    width: 100px;
+    height: 130px;
+}
+
+.detalles h5 {
+    margin-top: 25px;
+}
+
+.detalles p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* FIN ITEM INFO */
+
+.diasEntrega{
+    width: 300px;
+    text-align: center;
+}
+
+.diasEntrega p, .precioindiv p, .precioTotal p {
+    margin-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.precioindiv, .precioTotal{
+    width: 200px;
+    text-align: center;
+}
+
+.separador{
+    width: 80%;
+    height: 1px;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 25px;
+    margin-left: 10%;
+}
+
+/* FIN CARRITO DE CPMRAS*/
+
+
+
+
+
+
+
+

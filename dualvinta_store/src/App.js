@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { FormProducto } from './admin/formProducto';
 import { AuthProvider } from './context/AuthContext';
+import { CarroCompras } from './page/carroCompras';
 import { Categorias } from './page/categorias';
 import { CuidadoPersonal } from './page/CuidadoPersonal';
 import DetallesProducto from './page/DetallesPorProductos';
@@ -25,7 +27,8 @@ function App() {
                     <Route exact path="/detalles_de_producto/:id" component={DetallesProducto} />
                     <Route exact path="/users/:id" component={DetallesUsuario} />
                     <Route exact path="/vestimenta" component={Vestimenta} />
-
+                    <Route exact path="/carroCompras" component={CarroCompras} />
+                    <Route exact path="/formProducto" component={FormProducto} /> 
                    
                 </Switch>
             </AuthProvider>
