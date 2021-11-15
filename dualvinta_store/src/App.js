@@ -10,6 +10,7 @@ import PruebaProducto from './page/PruebaProductos';
 //import { RecuperarContraseña } from './page/RecuperarContraseña';//
 import { SignUp } from './page/registro';
 import { Vestimenta } from './page/vestimenta';
+import {FormProducto} from './admin/formProducto'
 
 function App() {
     return (
@@ -25,14 +26,18 @@ function App() {
                     <Route exact path="/detalles_de_producto/:id" component={DetallesProducto} />
                     <Route exact path="/users/:id" component={DetallesUsuario} />
                     <Route exact path="/vestimenta" component={Vestimenta} />
-
-                   
+                    <Route exact path="/formProducto" component={FormProducto} />
+                    
                 </Switch>
             </AuthProvider>
         </Router>
     );
 }
+
+
+
 //<Route exact path="/rcontraseña" component={RecuperarContraseña} />//
+
 
 export default App;
 
