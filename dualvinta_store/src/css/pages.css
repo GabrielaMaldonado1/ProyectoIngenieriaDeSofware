@@ -8,43 +8,205 @@
 	--fuentePrincipal:  'Staatliches', cursive;
 }
 
-.nuevo_home{
-    margin-top: 60px;
+.row{
+  display: flex;
+  flex-direction: row;
 }
 
-.Titulo_home{
-    margin-left: 150px; 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 30px;
-   
+.column{
+  display: flex;
+  flex-direction: column;
 }
 
-.search_secciones_home{
-    margin-left: 0px;
-    width: 300px;
-    border-style: solid;
-    border-color: var(--alternativo);
+.text-center{
+  text-align: center;
 }
 
-.img_carrusel_home{
-    width: 100%;
-    height: 450px;
+.preloader {
+  width: 70px;
+  height: 70px;
+  border: 10px solid var(--primario);
+  border-top: 10px solid rgb(80, 78, 78);
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.carrusel_home{
-    width: 95%;
-    height: 450px;
-    margin-left: 2.5%;
-    margin-top: 50px;
+.pad{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  
 }
 
-.btn_carrusel_home_next{
-    position: absolute;
-    margin-top: 200px;
-    margin-left: 94%;
+.cargando{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+    
 }
 
-.btn_carrusel_home_prev{
-    position: absolute;
-    margin-top: 200px;
+.tipsArea{ 
+  
+    margin-top: 70px; 
+    height: 150px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
 }
+
+.single-discount-area{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.primario{
+    background: linear-gradient(to right,#EC4895, #F59B0D) ;
+}
+
+.secundario{
+    background: linear-gradient(to right,#F7A9D6, #858EF8) ;
+}
+
+.alternativo{
+    background: linear-gradient(to right,#FC4a1a, #f7b733) ;
+}
+
+/* OPC HOME*/
+
+.top_catagory_area{
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: aqua;
+  
+}
+
+.single_catagory_area_1{
+  width: 50%;
+  height: 100%;
+   background: url(../data/img/inicio/pexels-maksim-goncharenok-4380970.jpg) center center ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.single_catagory_area_2{
+  width: 50%;
+  height: 100%;
+   background: url(../data/img/inicio/pexels-yuri-manei-2245433.jpg) center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boldsc{
+  font-weight: bold;
+}
+
+.catagory-content_2 h5, .catagory-content_2 h2, .catagory-content_2 h6{
+  color: white;
+}
+
+/*Tarjetas mas vendidos*/
+
+.product-img{
+  width: 100%;
+  height: 350px;
+}
+
+.tag{
+  width: 45px;
+  position: absolute;
+  background-color: var(--alternativo);
+  margin-top: 25px;
+  margin-left: 25px;
+  border-radius: 10px;
+}
+
+.cart{
+  width: 150px;
+   background-color: var(--alternativo);
+  margin-left: 70px;
+  border-radius: 10px;
+}
+
+.seccion_home{
+  width: 100%;
+  height: 500px;
+  margin-left: 0px;
+  margin-top: 40px;
+}
+
+.item_home{
+  width: 22%;
+  margin-left: 50px;
+}
+
+.infoProdu_home{
+  justify-content: start;
+  margin-top: 60px;
+}
+
+.price{
+  color: var(--alternativo)
+}
+
+/*TITULO SECCION*/
+
+.titulo_home_seccion{
+  margin-top: 70px;
+  justify-content: center;
+}
+
+.just{
+  justify-content: center;
+}
+
+.subrayado_titulo{
+  height: 1px;
+  width: 150px;
+  margin-top: 19px;
+  border-style: solid;
+  border-color: var(--alternativo);
+  border-width: 1px;
+}
+
+.titulo_seccion{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Ver_Mas{
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  background-color: var(--primario);
+  border-radius: 45px;
+  margin-top: 160px;
+  margin-left: 130px;
+}
+
+.Ver_Mas p {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+

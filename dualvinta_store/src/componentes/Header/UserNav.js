@@ -8,8 +8,6 @@ export const HeaderNavUser = () => {
 
   const userActive = UseStateUser();
 
-  console.log( userActive );
-
   const { currentUser, logout } = useAuth();
 
   const history = useHistory();

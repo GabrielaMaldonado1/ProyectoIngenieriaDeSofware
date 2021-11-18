@@ -5,16 +5,16 @@ import "../../css/vendor/bootstrap/css/bootstrap.min.css";
 import "../../css/pages.css";
 import dbProductos, { searchByName, sortByDate } from "../../data/PruebaProductos";
 
-const LstProductos = ({ titulo, sort }) => {
+const LstProductos = ({ titulo, data }) => {
 
     const [productos, SetProductos] = useState([]);
     const [update, setUpdate] = useState(true);
 
+    console.log(data)
     useEffect(() => {
         if (update) {
             //crea la funcion que llamara los datos
-            const respuesta = sort ? sortByDate() : dbProductos;
-            SetProductos(respuesta);
+            SetProductos(data);
             setUpdate(false);
         };
     }, [update]);
@@ -27,6 +27,7 @@ const LstProductos = ({ titulo, sort }) => {
         SetProductos(t);
     }
 
+    console.log(productos)
     return (
         <div className="container-fluid rounded shadow-sm nuevo_home">
             <div className="row">

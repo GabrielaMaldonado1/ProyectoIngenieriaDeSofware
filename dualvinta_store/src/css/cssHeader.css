@@ -130,8 +130,10 @@ li.car-shop a {
   
 }
 
+
+
 .header-bg {
-      background: url(../data/img/Banner_header1.jpeg) center center ;
+      background: url(../data/img/Banner_header.png) center center ;
       background-repeat: no-repeat;
       background-size:cover;
       
