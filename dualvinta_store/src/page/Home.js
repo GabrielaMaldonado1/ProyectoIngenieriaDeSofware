@@ -4,7 +4,7 @@ import LstProductos, { LstProductos2 } from '../componentes/Productos/LstProduct
 import CarouselLesly, { OfertasHome } from "../componentes/ofertas.js"
 import { useDispatch, useSelector } from "react-redux";
 import { UseAxiosCategoria } from '../hooks/UseAxiosLimit';
-import { showCategoriaProducto } from '../actions/producto';
+import { showCategoriaProducto, showAllProducto } from '../actions/producto';
 import "../css/pages.css";
 import { BarraTips } from '../componentes/homeComponents/barraTips';
 import { OpcionesHome } from '../componentes/homeComponents/opciones';
@@ -21,7 +21,7 @@ export const Home = () => {
     
     useEffect(() => {
 
-         dispatch(showCategoriaProducto("Ropa masculina"));
+         dispatch(showAllProducto());
 
          setTimeout(() => {
              setChecking(false)

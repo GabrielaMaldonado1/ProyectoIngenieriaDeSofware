@@ -1,4 +1,4 @@
-import { BuscarCateoria } from "../hooks/UseAxiosGets";
+import { BuscarCateoria, showAllItems } from "../hooks/UseAxiosGets";
 import { UseAxiosCategoria } from "../hooks/UseAxiosLimit"
 import { types } from "../types/types"
 
@@ -27,9 +27,9 @@ export const showCategoria = (  data  ) => {
 
 export const showAllProducto = () =>{
     return (dispatch) => {
-       BuscarCateoria().then((response) => {
+       showAllItems().then((response) => {
            
-           dispatch(showCategoria(response))     
+           dispatch(showAll(response))     
     
             })
             .catch((error) => {
@@ -38,8 +38,6 @@ export const showAllProducto = () =>{
                 
     }
 }
-
-
 
 export const showAll = ( data ) => {
     return {

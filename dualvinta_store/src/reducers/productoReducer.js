@@ -8,6 +8,11 @@ export const ProductoReducer = ( state = {}, action ) => {
             return {
                 data: action.payload.data,
             }
+        
+        case types.showall:
+            return {
+                data: action.payload.data,
+            }
     
         default:
             return state;

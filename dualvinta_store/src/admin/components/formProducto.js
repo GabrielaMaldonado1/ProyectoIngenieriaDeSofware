@@ -12,10 +12,15 @@ export const FormProducto = () => {
         descripcion: '',
         marca: '',
         modelo: '',
+        colores: '',
+        tallas: '',
         precio: '',
         existencias: '',
         fecha: hoy.toDateString(),
-        imgUrl: ''
+        imgUrl: '',
+        filtro: '',
+        nuevo: '',
+        vendido: ''
     });
 
     const handleInputChange = ({ target }) => {
@@ -61,6 +66,14 @@ export const FormProducto = () => {
                         <span class="input-group-text" id="inputGroup-sizing-default">modelo</span>
                         <input type="text" class="form-control inputForm" aria-label="Sizing example input" autoComplete="off" name="modelo" aria-describedby="inputGroup-sizing-default" onChange={handleInputChange}></input>
                     </div>
+                     <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">colores disponibles</span>
+                        <input type="text" class="form-control inputForm" aria-label="Sizing example input" autoComplete="off" name="colores" placeholder="verde, rojo, azul" aria-describedby="inputGroup-sizing-default" onChange={handleInputChange}></input>
+                    </div>
+                     <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">tallas disponibles</span>
+                        <input type="text" class="form-control inputForm" aria-label="Sizing example input" autoComplete="off" name="tallas" placeholder="M, X, XL" aria-describedby="inputGroup-sizing-default" onChange={handleInputChange}></input>
+                    </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">precio</span>
                         <input type="text" class="form-control inputForm" aria-label="Sizing example input" autoComplete="off" name="precio" aria-describedby="inputGroup-sizing-default" onChange={handleInputChange}></input>
@@ -73,6 +86,21 @@ export const FormProducto = () => {
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">imgUrl</span>
                         <input type="text" class="form-control inputForm" aria-label="Sizing example input" name="imgUrl" autoComplete="off" placeholder="http://localhost:9000/public/" aria-describedby="inputGroup-sizing-default" onChange={handleInputChange}></input>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Filtro</span>
+                        <input type="text" class="form-control inputForm" aria-label="Sizing example input" name="filtro" autoComplete="off" placeholder="filtro: pantalon, vestido, short y asi" aria-describedby="inputGroup-sizing-default" onChange={handleInputChange}></input>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">nuevo</span>
+                        <input type="text" class="form-control inputForm" aria-label="Sizing example input" name="nuevo" autoComplete="off" placeholder="si es nuevo poner nuevo si no lo es poner none" aria-describedby="inputGroup-sizing-default" onChange={handleInputChange}></input>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">vendido</span>
+                        <input type="text" class="form-control inputForm" aria-label="Sizing example input" name="vendido" autoComplete="off" placeholder="si es vendido poner vendido si no lo es poner none" aria-describedby="inputGroup-sizing-default" onChange={handleInputChange}></input>
                     </div>
 
                     <p> USAR "http://localhost:9000/public/" en imgURL y luego el nombre del archivo</p>
