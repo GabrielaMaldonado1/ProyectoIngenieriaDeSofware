@@ -22,6 +22,14 @@ const productoSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    color:{
+        type: String,
+        required: true
+    },
+    talla:{
+        type: String,
+        required: true
+    },
     precio:{
         type: Number,
         required: true
@@ -30,11 +38,19 @@ const productoSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    fecha:{
+    imgUrl:{
         type: String,
         required: true
     },
-    imgUrl:{
+    filtro:{
+        type: String,
+        required: true
+    },
+    nuevo:{
+        type: String,
+        required: true
+    },
+    vendido:{
         type: String,
         required: true
     }
