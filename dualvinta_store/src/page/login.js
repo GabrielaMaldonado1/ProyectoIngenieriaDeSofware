@@ -8,6 +8,8 @@ import LogoLogin from '../data/img/DUALVINTA_Logo.png';
 import '../css/cssLoginRegistro.css';
 import { useAuth } from '../context/AuthContext.js';
 import { useHistory } from 'react-router';
+import { useDispatch } from "react-redux";
+import { startGoogleLogin } from '../actions/auth.js';
 
 export const Login = () => {
 
@@ -15,6 +17,8 @@ export const Login = () => {
 
     const [loading, setLoading] = useState(false);
     const [errord, setError] = useState('');
+
+    const dispatch = useDispatch();
 
     const history = useHistory();
 
@@ -55,11 +59,11 @@ export const Login = () => {
     }
   }
 
-    const handleSubmitGoogle = async (e) => {
+    const handleSubmitGoogle = (e) => {
         e.preventDefault();
         setLoading(true);
         try {
-            await signupGoogle();
+            dispatch(startGoogleLogin());
             setLoading(false);
             history.push('/');
         } catch (error) {

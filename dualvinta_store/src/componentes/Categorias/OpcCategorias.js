@@ -5,7 +5,7 @@ import dbCategoria from "../../data/pruebaCategforia";
 
 import "../../css/categorias.css";
 
-export const OpcCategorias = () => {
+export const OpcCategorias = ({filtro}) => {
     
     const [productos, SetProductos] = useState([]);
     const [update, setUpdate] = useState(true);
@@ -23,7 +23,7 @@ export const OpcCategorias = () => {
         <div className="OpcCategorias">
            
                {productos.map((producto, index) =>
-                <OpcIndividual key={index} element={producto} />
+                <OpcIndividual key={index} element={producto} filtro={filtro}/>
             )}
             
         </div>

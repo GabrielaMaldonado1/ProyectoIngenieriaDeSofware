@@ -15,9 +15,12 @@ export const Home = () => {
 
     const dispatch = useDispatch();
 
-    const {data} = useSelector( state => state.producto)
+    const {data} = useSelector( state => state.producto);
 
    const [checking, setChecking] = useState(true)
+
+   
+
     
     useEffect(() => {
 
@@ -40,25 +43,24 @@ export const Home = () => {
             
         )
     }
-
-
+ 
     return (
         <div>
             <Header seccion="inicio" titulo="INICIO" />
             <CarouselLesly />
-            <Nuevo_MasVendido titulo="NUEVOS PRODUCTOS" data={data} />
+            <Nuevo_MasVendido titulo="NUEVOS PRODUCTOS" filtro="nuevo" />
             <BarraTips />
             <OpcionesHome />
-            <Nuevo_MasVendido titulo="MAS VENDIDO" data={data} />
-
-            
-           
+            <Nuevo_MasVendido titulo="MAS VENDIDO" filtro="vendido" />
             
         </div>
     )
 }
 
 /* 
+
+
+
 <LstProductos titulo="NUEVOS PRODUCTOS" data={data} />
 */
 

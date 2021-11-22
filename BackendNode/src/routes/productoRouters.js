@@ -35,6 +35,20 @@ router.get('/producto/:categoria', (req, res) => {
 
 });
 
+router.get('/producto/:filtro', (req, res) => {
+    const { categoria } = req.params;
+    console.log(categoria)
+    productoSchema.find({filtro: categoria}).limit(3).then( (data) => res.json(data)).catch( (error) => res.json({ message: error}));
+
+});
+
+router.get('/producto/:categoria', (req, res) => {
+    const { categoria } = req.params;
+    console.log(categoria)
+    productoSchema.find({categoria: categoria}).limit(3).then( (data) => res.json(data)).catch( (error) => res.json({ message: error}));
+
+});
+
 //ACTUALIZAR
 /*
 router.put('/producto/:id', (req, res) => {
