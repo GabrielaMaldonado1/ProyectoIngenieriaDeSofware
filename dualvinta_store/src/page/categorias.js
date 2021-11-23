@@ -4,6 +4,7 @@ import { AreaSeccionCategoria } from '../componentes/Categorias/CategorySalud/Ar
 import { OpcCategorias } from '../componentes/Categorias/OpcCategorias'
 import { OpcIndividual } from '../componentes/Categorias/OpcIndividual';
 import { Header } from '../componentes/Header/header'
+import Footer from '../componentes/Footer';
 
 
 export const Categorias = () => {
@@ -14,6 +15,9 @@ export const Categorias = () => {
             <Header seccion="categorias" titulo="CATEGORIAS"/>
     
             <AreaSeccionCategoria />
+
+        <Footer />
+
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { ItemCarroCompras } from '../componentes/carro de compra/itemCarroCompras'
+import Footer from '../componentes/Footer';
 import { Header } from '../componentes/Header/header'
 import '../css/cssCarrito.css';
 
@@ -99,6 +100,7 @@ export const CarroCompras = () => {
             
         </div>
 
+        <Footer />
         </>
     )
 }

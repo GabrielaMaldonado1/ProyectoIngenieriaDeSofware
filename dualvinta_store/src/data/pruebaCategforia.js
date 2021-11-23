@@ -9,28 +9,28 @@ import vestidos from "./img/categorias/mujer/vestidos.jpg"
 const dbCategoria = [
     {
         id:"1",
-        nombreCat: "abrigo",
+        nombreCat: "ABRIGOS",
         img: abrigos,
     },
     {
         id:"2",
-        nombreCat: "blusa",
+        nombreCat: "BLUSAS",
         img: blusas,
 
     },
     {
         id:"3",
-        nombreCat: "camiseta",
+        nombreCat: "CAMISETAS",
         img: camisetas,
     },
     {
         id:"4",
-        nombreCat: "pantalon",
+        nombreCat: "PANTALONES",
         img: pantalones,
     },
     {
         id:"5",
-        nombreCat: "vestido",
+        nombreCat: "VESTIDOS",
         img: vestidos,
     }      
 ]

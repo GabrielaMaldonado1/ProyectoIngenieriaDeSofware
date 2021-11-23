@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from "axios";
 import '../database/UseFirebase.js';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -9,7 +8,6 @@ import LogoLogin from '../data/img/DUALVINTA_Logo.png';
 import '../css/cssLoginRegistro.css';
 import { useAuth } from '../context/AuthContext.js';
 import { useHistory } from 'react-router';
-import { UserActiveLoggueado } from '../actions/user.js';
 
 export const SignUp = () => {
 
@@ -27,7 +25,6 @@ export const SignUp = () => {
         confirm: '',
     });
 
-
     const { nombre, email, password, confirm } = formState;
 
     useEffect(() => {
@@ -43,17 +40,14 @@ export const SignUp = () => {
 
     };
 
-    
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
         setLoading(true);
         console.log(email, password, confirm)
         if ( (password.length > 8) && password === confirm) {
             try {
                 await signup(email, password);
-                history.push('/infoUserRegistro');
-               
+                history.push('/');
             } catch (error) {
                 setError('Wrong Credentials');
                 setTimeout(() => setError(''), 1500);

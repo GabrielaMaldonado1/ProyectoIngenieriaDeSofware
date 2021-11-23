@@ -8,7 +8,6 @@ import LogoLogin from '../data/img/DUALVINTA_Logo.png';
 import '../css/cssLoginRegistro.css';
 import { useAuth } from '../context/AuthContext.js';
 import { useHistory } from 'react-router';
-import { useDispatch } from "react-redux";
 
 export const Login = () => {
 
@@ -16,8 +15,6 @@ export const Login = () => {
 
     const [loading, setLoading] = useState(false);
     const [errord, setError] = useState('');
-
-    const dispatch = useDispatch();
 
     const history = useHistory();
 
