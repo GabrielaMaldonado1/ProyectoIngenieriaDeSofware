@@ -27,7 +27,7 @@ export const SignUp = () => {
         confirm: '',
     });
 
-    
+
     const { nombre, email, password, confirm } = formState;
 
     useEffect(() => {
@@ -44,7 +44,7 @@ export const SignUp = () => {
     };
 
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
         setLoading(true);
