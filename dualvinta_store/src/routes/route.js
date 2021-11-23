@@ -14,6 +14,7 @@ import { SignUp } from '../page/registro';
 import { Vestimenta } from '../page/vestimenta';
 import { Dashboard } from '../admin/dashboard';
 import Nosotros from '../page/Nosotros';
+import { Formulario } from '../page/formularioRegistro';
 
 
 
@@ -33,7 +34,7 @@ export const AppRouters = () => {
                     <Route exact path="/vestimenta" component={Vestimenta} />
                     <Route exact path="/AdminDash" component={Dashboard} />
                     <Route exact path="/nosotros" component={Nosotros} />
-
+                    <Route exact path="/Formulario" component={Formulario} />
                 </Switch>
             </AuthProvider>
         </Router>

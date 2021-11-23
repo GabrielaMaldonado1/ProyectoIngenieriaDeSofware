@@ -47,7 +47,7 @@ export const SignUp = () => {
         if ( (password.length > 8) && password === confirm) {
             try {
                 await signup(email, password);
-                history.push('/');
+                history.push('/Formulario');
             } catch (error) {
                 setError('Wrong Credentials');
                 setTimeout(() => setError(''), 1500);
@@ -59,6 +59,8 @@ export const SignUp = () => {
         }
         setLoading(false);
     }
+
+  
 
     return (
         <div className="bg-login-registro">
