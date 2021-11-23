@@ -9,6 +9,11 @@ import "../css/pages.css";
 import { BarraTips } from '../componentes/homeComponents/barraTips';
 import { OpcionesHome } from '../componentes/homeComponents/opciones';
 import { Nuevo_MasVendido } from '../componentes/homeComponents/nuevo_MasVendido';
+import { useAuth } from '../context/AuthContext';
+
+import {UseStateUser} from '../hooks/UseStateUser'
+import { login } from '../actions/auth';
+import { UserActiveLoggueado } from '../actions/user';
 
 
 export const Home = () => {
@@ -17,8 +22,11 @@ export const Home = () => {
 
     const {data} = useSelector( state => state.producto);
 
-   const [checking, setChecking] = useState(true)
+   const [checking, setChecking] = useState(true);
 
+   const userActive = UseStateUser();
+
+   
    
 
     
@@ -27,11 +35,12 @@ export const Home = () => {
          dispatch(showAllProducto());
 
          setTimeout(() => {
+             
              setChecking(false)
-         }, 1500);
+         }, 2500);
          
         
-    }, [dispatch, setChecking ] )
+    }, [setChecking ] )
 
     if (checking) {
         return(
@@ -43,6 +52,17 @@ export const Home = () => {
             
         )
     }
+
+
+        if(userActive !== undefined){
+            dispatch(login(userActive.uid, userActive.email));
+
+            dispatch(UserActiveLoggueado(userActive.uid));
+        }
+        
+
+        
+
  
     return (
         <div>

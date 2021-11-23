@@ -1,4 +1,5 @@
-const userRoutes = require("./routes/productoRouters");
+const productoRoutes = require("./routes/productoRouters");
+const userRoutes = require("./routes/user");
 var cors = require('cors');
 
 const express = require('express');
@@ -10,7 +11,9 @@ const port = 9000;
 
 app.use(express.json());
 app.use(cors())
+app.use('/api', productoRoutes);
 app.use('/api', userRoutes);
+
 
 app.use('/public', express.static(`${__dirname}/storage/img`));
 

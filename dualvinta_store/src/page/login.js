@@ -9,7 +9,6 @@ import '../css/cssLoginRegistro.css';
 import { useAuth } from '../context/AuthContext.js';
 import { useHistory } from 'react-router';
 import { useDispatch } from "react-redux";
-import { startGoogleLogin } from '../actions/auth.js';
 
 export const Login = () => {
 
@@ -59,11 +58,11 @@ export const Login = () => {
     }
   }
 
-    const handleSubmitGoogle = (e) => {
+    const handleSubmitGoogle = async (e) => {
         e.preventDefault();
         setLoading(true);
         try {
-            dispatch(startGoogleLogin());
+            await signupGoogle();
             setLoading(false);
             history.push('/');
         } catch (error) {

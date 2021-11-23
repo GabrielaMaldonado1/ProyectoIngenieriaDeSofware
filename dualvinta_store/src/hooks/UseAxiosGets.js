@@ -17,3 +17,10 @@ export const showAllItems = async ()  => {
         return response.data
     });
 }
+
+export const GetUserId = async ( id )  => {
+    const url = `http://localhost:9000/api/user/${ id }`;
+    return await axios.get(url).then( (response) => {
+        return response.data
+    });
+}

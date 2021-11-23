@@ -6,5 +6,7 @@ export const types = {
     showall: '[producto] ShowAll',
 
     login: '[Auth] Login',
-    logout: '[Auth] Logout'
+    logout: '[Auth] Logout',
+
+    userActivo: '[User] UserActive'
 }

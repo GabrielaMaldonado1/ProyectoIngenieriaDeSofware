@@ -22,8 +22,7 @@ import { CarroCompras } from '../page/carroCompras';
 
 export const AppRouters = () => {
     return (
-        <Router>
-    <AuthProvider>
+        <Router>   
         <Switch>
             <Route exact path='/categorias' component={Categorias} />
             <Route exact path='/' component={Home} />
@@ -38,10 +37,10 @@ export const AppRouters = () => {
             <Route exact path="/resultadoCategoria/:filtro" component={ResultadoCategoriaGeneral} />
             <Route exact path="/resultadoOpcCategoria/:filtro/:categoria" component={ProductoOpcCategoriaFiltro} />
             <Route exact path="/carroCompras" component={CarroCompras} />
+            <Route exact path="/infoUserRegistro" component={ AQUI } />
             
 
         </Switch>
-    </AuthProvider>
 </Router>
     )
 }
