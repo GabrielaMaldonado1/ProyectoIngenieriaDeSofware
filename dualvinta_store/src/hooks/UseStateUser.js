@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export const UseStateUser =  () => {
 
-    const [state, setState] = useState();
+    const [userL, setState] = useState();
 
 
     const auth = getAuth();
@@ -23,6 +23,6 @@ export const UseStateUser =  () => {
         }
     });
 
-    return state;
+    return userL;
 
 }

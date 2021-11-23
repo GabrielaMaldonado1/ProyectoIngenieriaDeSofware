@@ -15,8 +15,10 @@ import { Vestimenta } from '../page/vestimenta';
 import { Dashboard } from '../admin/dashboard';
 import Nosotros from '../page/Nosotros';
 import { Formulario } from '../page/formularioRegistro';
-
-
+import { Producto } from '../page/producto';
+import { ResultadoCategoriaGeneral } from '../page/resultadoCategoriaGeneral';
+import { ProductoOpcCategoriaFiltro } from '../page/productoOpcCaregoria';
+import { CarroCompras } from '../page/carroCompras';
 
 export const AppRouters = () => {
     return (
@@ -35,6 +37,11 @@ export const AppRouters = () => {
                     <Route exact path="/AdminDash" component={Dashboard} />
                     <Route exact path="/nosotros" component={Nosotros} />
                     <Route exact path="/Formulario" component={Formulario} />
+                    <Route exact path="/producto/:filtro" component={Producto} />
+                    <Route exact path="/resultadoCategoria/:filtro" component={ResultadoCategoriaGeneral} />
+                    <Route exact path="/resultadoOpcCategoria/:filtro/:categoria" component={ProductoOpcCategoriaFiltro} />
+                    <Route exact path="/carroCompras" component={CarroCompras} />
+                    <Route exact path="/infoUserRegistro" component={AQUI} />
                 </Switch>
             </AuthProvider>
         </Router>

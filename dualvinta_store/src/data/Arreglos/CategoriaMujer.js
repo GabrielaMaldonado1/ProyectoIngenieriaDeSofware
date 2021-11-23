@@ -12,48 +12,48 @@ import pantalones from "../img/categorias/CategoriasGeneral/mujer/PANTALONES_CAT
 const dbCategoriaMujer = [
     {
         id:"1",
-        nombreCat: "CAMISETAS",
+        nombreCat: "camiseta",
         img: camisetas,
     },
     {
         id:"2",
-        nombreCat: "BLUSAS",
+        nombreCat: "blusa",
         img: blusas,
 
     },
     {
         id:"3",
-        nombreCat: "FALDAS",
+        nombreCat: "falda",
         img: faldas,
     },
     {
         id:"4",
-        nombreCat: "PANTALONES",
+        nombreCat: "pantalon",
         img: pantalones,
     },
     {
         id:"5",
-        nombreCat: "VESTIDOS",
+        nombreCat: "vestido",
         img: vestidos,
     },
     {
         id:"6",
-        nombreCat: "DEPORTIVO",
+        nombreCat: "legging",
         img: deportivo,
     },
     {
         id:"7",
-        nombreCat: "ABRIGOS",
+        nombreCat: "abrigo",
         img: abrigos,
     },
     {
         id:"8",
-        nombreCat: "SHORTS",
+        nombreCat: "short",
         img: shorts,
     },
     {
         id:"9",
-        nombreCat: "PIJAMAS",
+        nombreCat: "pijama",
         img: pijamas,
     }          
 ]

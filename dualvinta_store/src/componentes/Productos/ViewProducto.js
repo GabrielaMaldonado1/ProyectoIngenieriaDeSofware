@@ -18,7 +18,7 @@ const ViewProducto = ({ element }) => {
                         <p className="">
                             {element.precio} LPS
                         </p>
-                        <Link className="stretched-link" to={`/detalles_de_producto/${element.id}`} />
+                        <Link className="stretched-link" to={`/detalles_de_producto/${element._id}`} />
                     </div>
                     <button className="btn btn-outline-success" style={{ width: "100%", marginBottom: 10 }}><img src={carrito} alt="iconCarrito" width="25px" height="25px" />
                      Agregar al Carrito</button>
