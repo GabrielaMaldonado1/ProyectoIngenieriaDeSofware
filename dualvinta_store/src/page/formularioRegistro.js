@@ -5,12 +5,12 @@ import  { UseStateUser}  from  "../hooks/UseStateUser";
 
 export const Formulario = () => {
     const [todo, setTodo] = useState({
-        Nombre: "",
-        Apellido: "",
-        Departamento: "",
-        Ciudad: "",
-        Direccion: "",
-        Telefono: "",
+        nombre: "",
+        apellido: "",
+        departamento: "",
+        ciudad: "",
+        direccion: "",
+        telefono: "",
       
     });
 
@@ -21,9 +21,9 @@ const history = useHistory();
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const { Nombre, Apellido,Departamento,Ciudad, Direccion,Telefono} = todo;
+        const { nombre, apellido,departamento,ciudad, direccion,telefono} = todo;
         
-        if (!Nombre.trim()  || !Apellido.trim()|| !Departamento.trim()|| !Ciudad.trim() || !Direccion.trim()|| !Telefono.trim()) {
+        if (!nombre.trim()  || !apellido.trim()|| !departamento.trim()|| !ciudad.trim() || !direccion.trim()|| !telefono.trim()) {
             setError(true);
             return;
         }
@@ -33,12 +33,12 @@ const history = useHistory();
         console.log(todo);
 
         setTodo({
-            Nombre: "",
-            Apellido: "",
-            Departamento: "",
-            Ciudad: "",
-            Direccion: "",
-            Telefono: "",
+            nombre: "",
+            apellido: "",
+            departamento: "",
+            ciudad: "",
+            direccion: "",
+            telefono: "",
             
         
         });
@@ -87,7 +87,7 @@ const history = useHistory();
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.Nombre}
+                    value={todo.nombre}
                 />
                  <input
                     name="apellido"
@@ -95,7 +95,7 @@ const history = useHistory();
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.Apellido}
+                    value={todo.apellido}
                 />
                  <input
                     name="departamento"
@@ -103,7 +103,7 @@ const history = useHistory();
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.Departamento}
+                    value={todo.departamento}
                 />
                  <input
                     name="ciudad"
@@ -111,7 +111,7 @@ const history = useHistory();
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.Ciudad}
+                    value={todo.ciudad}
                 />
                  <input
                     name="direccion"
@@ -119,15 +119,15 @@ const history = useHistory();
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.Direccion}
+                    value={todo.direccion}
                 />
                  <input
                     name="telefono"
                     placeholder="telefono"
                     type="text"
                     className="form-control mb-2"
-                    onChange={handleChange}
-                    value={todo.Telefono}
+                onChange={handleChange}
+                    value={todo.telefono}
                 />
                 
 
