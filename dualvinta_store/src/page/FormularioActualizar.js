@@ -6,6 +6,8 @@ import { GetUserId, updateUserByUid } from "../hooks/UseAxiosGets";
 import { async } from "@firebase/util";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import '../css/formularioActualizar.css';
+import Logo from '../data/img/DUALVINTA.png'
 
 
 export const FormularioActualizar = () => {
@@ -70,8 +72,10 @@ export const FormularioActualizar = () => {
         <>
             {error && <PintarError />}
 
-            <div >
-                <h3> Registro de usuario </h3>
+            <img className="imgformact" src={Logo} alt="Logo" />
+            
+            <div className="FormularioCambiarInfo">
+                <h3> Actualizar informanción </h3>
                 <input
                     name="nombre"
                     placeholder="nombre"
@@ -131,10 +135,12 @@ export const FormularioActualizar = () => {
 
 
 
-                <button onClick={actualizar} className="btn btn-primary" type="submit" >
+                <button onClick={actualizar} className="btn btn-primary act" type="submit" >
                     Actualizar
                 </button>
             </div>
+
+            <p className="nota">NOTA: Llene solo los campos que quiere editar, si no desea editar cierta informanción dejar en blanco.</p>
         </>
 
     );

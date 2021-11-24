@@ -69,10 +69,7 @@ export const SignUp = () => {
                     <img className="img_logo" src={LogoLogin} alt="Logo"></img>
                 </div>
                 <form className="formulario-login" onSubmit={handleSubmit}>
-                    
-                    <input type="text" className="email__login1" name="nombre" placeholder="Nombre y Apellido" autoComplete="off" required
-                        onChange={handleInputChange} ></input>
-                    
+                                        
                     <input type="email" className="email__login" name="email" placeholder="Correo Electronico" autoComplete="on" required
                         onChange={handleInputChange} ></input>
 

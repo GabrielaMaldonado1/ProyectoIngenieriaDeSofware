@@ -2,6 +2,8 @@ import { useState } from "react/cjs/react.development";
 import axios from "axios";
 import { useHistory } from "react-router";
 import { UseStateUser } from "../hooks/UseStateUser";
+import '../css/formularioActualizar.css';
+import Logo from '../data/img/DUALVINTA.png'
 
 export const Formulario = () => {
     const [todo, setTodo] = useState({
@@ -80,7 +82,9 @@ export const Formulario = () => {
 
             {error && <PintarError />}
 
-            <form onSubmit={registrar}>
+            <img className="imgformact" src={Logo} alt="Logo" />
+
+            <form onSubmit={registrar} className="FormularioCambiarInfo">
                 <h3> Registro de usuario </h3>
                 <input
                     name="nombre"
@@ -133,9 +137,10 @@ export const Formulario = () => {
 
 
 
-                <button className="btn btn-primary" type="submit" >
+                <button className="btn btn-primary act" type="submit" >
                     continuar
                 </button>
+                
             </form>
         </>
 

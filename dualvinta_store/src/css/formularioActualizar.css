@@ -1,0 +1,35 @@
+
+.imgformact{
+    margin-left: 35%;
+    margin-top: 20px;
+}
+
+.nota{
+    position: absolute;
+}
+
+.FormularioCambiarInfo{
+    background-color: white;
+    width: 60%;
+    height: 450px;
+    border-radius: 15px;
+    margin-top: 15px;
+    margin-left: 250px;
+    text-align: center;
+}
+
+.FormularioCambiarInfo h3{
+    margin-bottom: 15px;
+}
+
+.FormularioCambiarInfo input {
+    margin-top: 10px;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.act{
+    background-color: #eccd6a;
+    margin-top: 10px;
+    border-color: #eccd6a;
+}
