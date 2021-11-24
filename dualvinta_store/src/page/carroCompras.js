@@ -10,13 +10,13 @@ export const CarroCompras = () => {
 
         <Header seccion="carrito" titulo="CARRO DE COMPRAS" />
         
-        <div className="carroCompras column">
+        <div className="carroCompras column_carrito">
             
-            <div className="headerCarrito row">
+            <div className="headerCarrito row_carrito">
 
                 <div className="titulo">
-                    <div className="precios column">
-                        <div className="subtotal__carrito row">
+                    <div className="precios column_carrito">
+                        <div className="subtotal__carrito row_carrito">
                             
                             <div className="p_precios">
                                  <p>SubTotal</p>
@@ -30,7 +30,7 @@ export const CarroCompras = () => {
                            
                            
                         </div>
-                        <div className="impuesto__carrito row">
+                        <div className="impuesto__carrito row_carrito">
                             
                             <div className="p_precios">
                                  <p>Impuesto</p>
@@ -42,7 +42,7 @@ export const CarroCompras = () => {
 
                             <p className="LPS">Lps.</p>
                         </div>
-                        <div className="total__carrito row">
+                        <div className="total__carrito row_carrito">
                             
                             <div className="p_precios">
                                 <p>Total</p>
@@ -71,9 +71,9 @@ export const CarroCompras = () => {
 
             <hr></hr>
 
-            <div className="bodyCarrito column">
+            <div className="bodyCarrito column_carrito">
 
-                <div className="Header__bodyCarrito row">
+                <div className="Header__bodyCarrito row_carrito">
                     <div className="header__bodyCarrito__Cantidad textCenter">
                         <h3>Cantidad</h3>
                     </div>
@@ -91,7 +91,7 @@ export const CarroCompras = () => {
                     </div>
                 </div>
 
-                <div className="items__bodyCarrito column">
+                <div className="items__bodyCarrito column_carrito">
                 <ItemCarroCompras />
                 <ItemCarroCompras />
                 </div>

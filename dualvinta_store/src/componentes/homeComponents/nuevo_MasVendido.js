@@ -13,10 +13,10 @@ export const Nuevo_MasVendido = ({ titulo, filtro }) => {
 
     return (
         <>
-            <div class="row titulo_home_seccion">
+            <div class="row_page titulo_home_seccion">
                 <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
 
-                    <div className="row just">
+                    <div className="row_page just">
                         <div className="subrayado_titulo"></div>
                         <h2 className="titulo_seccion"><span>{titulo}</span></h2>
                         <div className="subrayado_titulo"></div>
@@ -27,7 +27,7 @@ export const Nuevo_MasVendido = ({ titulo, filtro }) => {
                 </div>
             </div>
 
-            <div className="row seccion_home" style={{}}>
+            <div className="row_page seccion_home" style={{}}>
 
                 {
 

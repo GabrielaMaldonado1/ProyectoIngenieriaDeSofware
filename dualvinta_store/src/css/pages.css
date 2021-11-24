@@ -8,12 +8,12 @@
 	--fuentePrincipal:  'Staatliches', cursive;
 }
 
-.row{
+.row_page{
   display: flex;
   flex-direction: row;
 }
 
-.column{
+.column_page{
   display: flex;
   flex-direction: column;
 }

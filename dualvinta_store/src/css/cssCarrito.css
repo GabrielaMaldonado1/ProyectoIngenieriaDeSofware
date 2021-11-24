@@ -18,12 +18,12 @@ hr {
   margin-left: 15px;
 }
 
-.column{
+.column_carrito{
     display: flex;
     flex-direction: column;
 }
 
-.row{
+.row_carrito{
     display: flex;
     flex-direction: row;
 }
@@ -184,7 +184,7 @@ hr {
     margin-bottom: 15px;
 }
 
-.item{
+.item_carrito{
     width: 450px;
     height: 150px;
 

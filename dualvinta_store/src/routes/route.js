@@ -15,7 +15,10 @@ import { Dashboard } from '../admin/dashboard';
 import Nosotros from '../page/Nosotros';
 import { Formulario } from '../page/formularioRegistroo';
 import FormularioActualizar from '../page/FormularioActualizar';
-
+import { Producto } from '../page/producto';
+import { ResultadoCategoriaGeneral } from '../page/resultadoCategoriaGeneral';
+import { ProductoOpcCategoriaFiltro } from '../page/productoOpcCaregoria';
+import { CarroCompras } from '../page/carroCompras';
 
 
 export const AppRouters = () => {
@@ -28,14 +31,18 @@ export const AppRouters = () => {
                     <Route exact path='/cuidado' component={CuidadoPersonal} />
                     <Route exact path='/login' component={Login} />
                     <Route exact path="/registro" component={SignUp} />
-                    <Route exact path="/producto" component={PruebaProducto} />
                     <Route exact path="/detalles_de_producto/:id" component={DetallesProducto} />
                     <Route exact path="/MiCuenta" component={DetallesUsuario} />
                     <Route exact path="/vestimenta" component={Vestimenta} />
                     <Route exact path="/AdminDash" component={Dashboard} />
+                    <Route exact path="/producto/:filtro" component={Producto} />
                     <Route exact path="/nosotros" component={Nosotros} />
                     <Route exact path="/infoUserRegistro" component={Formulario} />
                     <Route exact path="/actualizar-usuario/:uid" component={FormularioActualizar} />
+                    <Route exact path="/resultadoCategoria/:filtro" component={ResultadoCategoriaGeneral} />
+                    <Route exact path="/resultadoOpcCategoria/:filtro/:categoria" component={ProductoOpcCategoriaFiltro} />
+                    <Route exact path="/carroCompras" component={CarroCompras} />
+
                 </Switch>
             </AuthProvider>
         </Router>

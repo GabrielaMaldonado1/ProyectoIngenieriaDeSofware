@@ -4,16 +4,16 @@ import { InfoItem } from './infoItem'
 export const ItemCarroCompras = () => {
     return (
         
-        <div className="column">
+        <div className="column_carrito">
 
-<div className="itemCarro row">
+<div className="itemCarro row_carrito">
 
-            <div className="cantidad column">
+            <div className="cantidad column_carrito">
                 <input className="CantidadNumber" type="number"></input>
                 <input className="RemoverItem" type="button" value="Remover"></input>
             </div>
 
-            <div className="item">
+            <div className="item_carrito">
                 <InfoItem />
             </div>
 
