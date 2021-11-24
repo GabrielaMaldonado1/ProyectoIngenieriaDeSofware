@@ -5,54 +5,46 @@ import { UseStateUser } from "../hooks/UseStateUser";
 import { GetUserId, updateUserByUid } from "../hooks/UseAxiosGets";
 import { async } from "@firebase/util";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+
 
 export const FormularioActualizar = () => {
-    const [user, setUser] = useState({
-        uid: "",
-        nombre: "",
-        email: "",
-        apellido: "",
-        departamento: "",
-        ciudad: "",
-        direccion: "",
-        telefono: "",
+    
+    const [usuarioActiv, setuUsuarioActiv] = useState({});
+    const { user } = useSelector(state => state.user);
+
+    useEffect(() => {
+        user.map((producto, index) => {
+
+            setuUsuarioActiv(producto)
+        })
+    
+    }, [])
+
+
+    const [userA, setUser] = useState({
+        
+        nombre: usuarioActiv.nombre,
+        apellido: usuarioActiv.apellido,
+        email: usuarioActiv.email,
+        departamento: usuarioActiv.departamento,
+        ciudad: usuarioActiv.cuidad,
+        direccion: usuarioActiv.direccion,
+        telefono: usuarioActiv.telefono,
+        uid: usuarioActiv.uid
     });
 
-    const { id } = useParams();
+    const { uid } = useParams();
 
-    const { nombre, apellido, email, departamento, ciudad, direccion, telefono } = user;
+    const { nombre, apellido, email, departamento, ciudad, direccion, telefono } = userA;
 
-    const userActive = UseStateUser();
     const history = useHistory();
     const [error, setError] = useState(false);
 
-    useEffect(() => {
-
-        obetnerUsuario();
-
-    }, [])
-
-    const obetnerUsuario = async () => {
-        const response = await GetUserId(id);
-
-        const { nombre, apellido, departamento, ciudad, email, direccion, telefono, uid } = response[0];
-
-        setUser({
-            nombre,
-            email,
-            apellido,
-            departamento,
-            ciudad,
-            direccion,
-            telefono,
-            uid
-        });
-
-    }
-
+  
     const handleChange = (e) => {
         setUser({
-            ...user,
+            ...userA,
             [e.target.name]: e.target.value,
         });
     };
@@ -62,17 +54,13 @@ export const FormularioActualizar = () => {
     );
 
 
-    const actualizar = async () => {
-        console.log(user);
+    const actualizar = () => {
+        console.log(userA);
 
         // cambiar en este metodo la variable de user.id por el id de la otra forma que se obtenga
-        const res = await updateUserByUid(user.uid, user);
-        const { data, status } = res;
+        updateUserByUid(uid, userA);
+      history.push('/')
 
-        if (status === 200) {
-            console.log(data)
-            history.push("/infoUserRegistro");
-        }
 
     }
 

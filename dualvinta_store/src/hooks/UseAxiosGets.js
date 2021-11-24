@@ -29,8 +29,7 @@ export const updateUserByUid = async (uid, data) => {
 
     try {
         const url = `http://localhost:9000/api/users/${uid}`;
-        const response = await axios.put(url, data);
-        return response;
+        axios.put(url, data);
     } catch (error) {
         console.log(error)
     }

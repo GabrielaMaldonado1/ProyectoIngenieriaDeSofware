@@ -35,7 +35,7 @@ export const AppRouters = () => {
                     <Route exact path="/AdminDash" component={Dashboard} />
                     <Route exact path="/nosotros" component={Nosotros} />
                     <Route exact path="/infoUserRegistro" component={Formulario} />
-                    <Route exact path="/actualizar-usuario/:id" component={FormularioActualizar} />
+                    <Route exact path="/actualizar-usuario/:uid" component={FormularioActualizar} />
                 </Switch>
             </AuthProvider>
         </Router>
