@@ -67,16 +67,17 @@ export const Home = () => {
     return (
         <div>
             <Header seccion="inicio" titulo="INICIO" />
-            <CarouselLesly />
-            <Nuevo_MasVendido titulo="NUEVOS PRODUCTOS" filtro="nuevo" />
-            <BarraTips />
-            <OpcionesHome />
-            <Nuevo_MasVendido titulo="MAS VENDIDO" filtro="vendido" />
-
+            {
+                //Aisle el contenido en un div con una propiedad overflowX ya que hay un problema con el css de los componentes que impide que se acoplen bien a la pagina.
+            }
+            <div style={{overflowX:"auto"}}>
+                <CarouselLesly />
+                <Nuevo_MasVendido titulo="NUEVOS PRODUCTOS" filtro="nuevo" />
+                <BarraTips />
+                <OpcionesHome />
+                <Nuevo_MasVendido titulo="MAS VENDIDO" filtro="vendido" />
+            </div>
             <Footer />
-
-
-
         </div>
     )
 }
