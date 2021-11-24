@@ -29,11 +29,11 @@ export const AppRouters = () => {
                     <Route exact path="/registro" component={SignUp} />
                     <Route exact path="/producto" component={PruebaProducto} />
                     <Route exact path="/detalles_de_producto/:id" component={DetallesProducto} />
-                    <Route exact path="/users/:id" component={DetallesUsuario} />
+                    <Route exact path="/MiCuenta" component={DetallesUsuario} />
                     <Route exact path="/vestimenta" component={Vestimenta} />
                     <Route exact path="/AdminDash" component={Dashboard} />
                     <Route exact path="/nosotros" component={Nosotros} />
-                    <Route exact path="/Formulario" component={Formulario} />
+                    <Route exact path="/infoUserRegistro" component={Formulario} />
                 </Switch>
             </AuthProvider>
         </Router>
