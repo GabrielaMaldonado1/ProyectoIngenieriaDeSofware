@@ -10,7 +10,7 @@ export const Nuevo_MasVendido = ({ titulo, filtro }) => {
    let j = 0;
    
 
-    console.log("UwU")
+
     return (
         <>
             <div class="row titulo_home_seccion">

@@ -18,8 +18,8 @@ export const showAllItems = async ()  => {
     });
 }
 
-export const GetUserId = async ( id )  => {
-    const url = `http://localhost:9000/api/user/${ id }`;
+export const GetUserId = async ( uid )  => {
+    const url = `http://localhost:9000/api/users/${ uid }`;
     return await axios.get(url).then( (response) => {
         return response.data
     });

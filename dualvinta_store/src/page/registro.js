@@ -47,7 +47,7 @@ export const SignUp = () => {
         if ( (password.length > 8) && password === confirm) {
             try {
                 await signup(email, password);
-                history.push('/Formulario');
+                history.push('/infoUserRegistro');
             } catch (error) {
                 setError('Wrong Credentials');
                 setTimeout(() => setError(''), 1500);

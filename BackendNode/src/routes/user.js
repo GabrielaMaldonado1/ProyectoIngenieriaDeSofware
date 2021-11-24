@@ -21,18 +21,18 @@ router.get('/users', (req, res) => {
 
 //USUARIO ESPECIFICO
 
-router.get('/users/:id', (req, res) => {
-    const { id } = req.params;
-    userSchema.findById(id).then( (data) => res.json(data)).catch( (error) => res.json({ message: error}));
+router.get('/users/:uid', (req, res) => {
+    const { uid } = req.params;
+    userSchema.find({uid: uid}).then( (data) => res.json(data)).catch( (error) => res.json({ message: error}));
 
 });
 
 //ACTUALIZAR
 
-router.put('/users/:id', (req, res) => {
-    const { id } = req.params;
+router.put('/users/:uid', (req, res) => {
+    const { uid } = req.params;
     const { name, age, email } = req.body;
-    userSchema.updateOne({ _id: id },{  $set:{ name, age, email} }).then( (data) => res.json(data)).catch( (error) => res.json({ message: error}));
+    userSchema.updateOne({ uid: uid },{  $set:{ name, age, email} }).then( (data) => res.json(data)).catch( (error) => res.json({ message: error}));
 
 });
 

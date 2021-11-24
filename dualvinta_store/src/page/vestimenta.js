@@ -4,6 +4,7 @@ import { Header } from '../componentes/Header/header'
 import LstProductos from '../componentes/Productos/LstProductos'
 import { GifExpertApp } from '../GifExpertApp'
 import Footer from '../componentes/Footer';
+import LstProductoAllData from '../componentes/Productos/LstProductoAllData'
 
 export const Vestimenta = () => {
     return (
@@ -12,7 +13,7 @@ export const Vestimenta = () => {
             
             <OpcCategorias />
 
-            <LstProductos titulo="Resultados Generales"/>
+            <LstProductoAllData titulo="Resultados Generales"/>
         <Footer />
             
         </div>

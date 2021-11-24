@@ -52,7 +52,7 @@ export const HeaderNavUser = () => {
     <nav className="bg-nav">
       <div className="user-menu">
         <ul className="menu-usuario">
-          <li><Link to="/users/0310199600061">Mi Cuenta</Link></li>
+          <li><Link to="/MiCuenta">Mi Cuenta</Link></li>
           <li><a href="#">Carro de Compras</a> </li>
           <li><a href="#">Pagar</a> </li>
           <Logguedo active={userActive} />

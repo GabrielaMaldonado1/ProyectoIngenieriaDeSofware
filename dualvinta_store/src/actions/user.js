@@ -1,9 +1,9 @@
 import { GetUserId } from "../hooks/UseAxiosGets";
 import { types } from "../types/types";
 
-export const UserActiveLoggueado = ( id ) =>{
+export const UserActiveLoggueado = ( uid ) =>{
     return (dispatch) => {
-       GetUserId( id ).then((response) => {
+       GetUserId( uid ).then((response) => {
            
            dispatch(userStore(response))     
     

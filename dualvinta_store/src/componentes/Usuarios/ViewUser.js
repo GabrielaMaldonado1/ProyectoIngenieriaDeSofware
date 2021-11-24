@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { findUser } from "../../data/PruebaUsuarios";
 import m from "../../data/img/usuarios_image/user.png"
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
 import { Table } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const ViewUser = () => {
 
+    
+
+    
     const [screen, setScreen] = useState(<MyUser />);
 
     function setScreens(e) {
@@ -40,41 +44,88 @@ const ViewUser = () => {
     )
 };
 
-const MyUser = () => {
-    const [update, setUpdate] = useState(true);
-    const [usuario, setUsuario] = useState({});
-    const { id } = useParams();
+const MyUser = ( ) => {
+    
+    const [usuarioActiv, setuUsuarioActiv] = useState({})
+    const [checking, setChecking] = useState(true);
+    const { user } = useSelector( state => state.user)
+
+    const history = useHistory();
+
+
+    const cambiarInfo = (e) =>{
+        history.push('/CambiarInfo');
+    }
 
     useEffect(() => {
-        if (update) {
-            //funcion que trae los datos de la base de datos;
-            const t = findUser(id);
-            setUsuario(t);
-            setUpdate(false);
-        };
-    }, [update]);
+       user.map((producto, index) => {
+
+        setuUsuarioActiv(producto)
+
+        setTimeout(() => {
+             setChecking(false)
+         }, 1500);
+    })
+    }, [])
+
+    if (checking) {
+        return(
+            <div className="cargando">
+                <div class="preloader"></div>
+                <h1>Cargando informanción</h1>
+            </div>
+            
+            
+        )
+    }
 
     return (
         <div className="row">
             <div className="col-md-3">
-                <img src={usuario.imagen? usuario.imagen : m} alt="user" width="150px" />
+                <img src={m} alt="user" width="150px" />
             </div>
             <div className="col-md-9">
-                <h3 style={{ marginBottom: 20 }}><b>{usuario.nombre}</b></h3>
-                <h6>Email: {usuario.email}</h6>
-                <h6>Nombre: {usuario.nombre}</h6>
-                <h6>Id: {usuario.id}</h6>
-                <h6>Telefono: {usuario.telefono}</h6>
-                <h6>Genero: {usuario.genero}</h6>
+                <h3 style={{ marginBottom: 20 }}><b>{usuarioActiv.nombre}</b></h3>
+                <h6>Email: {usuarioActiv.email}</h6>
+                <h6>Nombre: {usuarioActiv.nombre + " " + usuarioActiv.apellido}</h6>
+                <h6>Telefono: {usuarioActiv.telefono}</h6>
             </div>
             <div className="col-sm-12 text-right">
-                <button className="btn btn-outline-success">Editar Perfil</button>
+                <button className="btn btn-outline-success" onClick={cambiarInfo}>Editar Perfil</button>
             </div>
         </div>
     )
 };
 
 const Direcciones = () => {
+
+    const [usuarioActiv, setuUsuarioActiv] = useState({})
+    const [checking, setChecking] = useState(true);
+    const { user } = useSelector( state => state.user)
+
+
+    useEffect(() => {
+       user.map((producto, index) => {
+
+        setuUsuarioActiv(producto)
+
+        setTimeout(() => {
+             setChecking(false)
+         }, 1500);
+    })
+    }, [])
+
+    if (checking) {
+        return(
+            <div className="cargando">
+                <div class="preloader"></div>
+                <h1>Cargando informanción</h1>
+            </div>
+            
+            
+        )
+    }
+
     return (
         <div>
          
@@ -94,10 +145,10 @@ const Direcciones = () => {
                     <tr>
                     <td>1</td>
                     <td>Honduras</td>
-                    <td>Colon</td>
-                    <td>Tocoa</td>
-                    <td>1ra avenida contiguo a elektra</td>
-                    <td>50496522252</td>
+                    <td>{usuarioActiv.departamento}</td>
+                    <td>{usuarioActiv.ciudad}</td>
+                    <td>{usuarioActiv.direccion}</td>
+                    <td>{usuarioActiv.telefono}</td>
                     <td>1</td>
                     </tr>
                     

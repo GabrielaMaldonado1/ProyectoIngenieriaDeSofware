@@ -4,12 +4,12 @@ import ViewUser from "../componentes/Usuarios/ViewUser";
 import Footer from '../componentes/Footer';
 
 const DetallesUsuario = () => {
-  
+    console.log("dded")
     return(
         <div>
             <Header seccion="none" titulo="PERFIL" />
             <ViewUser />
-        <Footer />
+        
 
         </div>
     )

@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import  { UseStateUser}  from  "../hooks/UseStateUser";
 
 export const Formulario = () => {
+    
     const [todo, setTodo] = useState({
         nombre: "",
         apellido: "",
@@ -15,7 +16,9 @@ export const Formulario = () => {
     });
 
     const userActive =UseStateUser();
-const history = useHistory();
+
+    const history = useHistory();
+
     const [error, setError] = useState(false);
 
     const handleSubmit = (e) => {
@@ -66,7 +69,7 @@ const history = useHistory();
             uid: userActive.uid
         }
 
-        const url = "http://localhost:9000/api/users";
+        const url = `http://localhost:9000/api/users`;
            
         axios.post(url, infoGuardar);
 
@@ -133,7 +136,7 @@ const history = useHistory();
 
 
                 <button className="btn btn-primary" type="submit" >
-                    continuar
+                    Guardar
                 </button>
             </form>
         </>
