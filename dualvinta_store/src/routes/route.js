@@ -14,6 +14,7 @@ import { Vestimenta } from '../page/vestimenta';
 import { Dashboard } from '../admin/dashboard';
 import Nosotros from '../page/Nosotros';
 import { Formulario } from '../page/formularioRegistroo';
+import FormularioActualizar from '../page/FormularioActualizar';
 
 
 
@@ -34,6 +35,7 @@ export const AppRouters = () => {
                     <Route exact path="/AdminDash" component={Dashboard} />
                     <Route exact path="/nosotros" component={Nosotros} />
                     <Route exact path="/infoUserRegistro" component={Formulario} />
+                    <Route exact path="/actualizar-usuario/:id" component={FormularioActualizar} />
                 </Switch>
             </AuthProvider>
         </Router>

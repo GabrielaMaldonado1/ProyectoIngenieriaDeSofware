@@ -1,16 +1,15 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import React, { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { findUser } from "../../data/PruebaUsuarios";
 import m from "../../data/img/usuarios_image/user.png"
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
-import { Table } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { Table } from 'react-bootstrap';
+
 
 const ViewUser = () => {
 
-    
-
-    
     const [screen, setScreen] = useState(<MyUser />);
 
     function setScreens(e) {
@@ -22,6 +21,8 @@ const ViewUser = () => {
             setScreen(<Ordenes />)
         };
     };
+
+    //mongodb+srv://root:<password>@inventory.l4vee.mongodb.net/test
 
     return (
         <div className="rounded shadow-sm container-fluid py-4" style={{ marginTop: 40 }}>
@@ -44,117 +45,63 @@ const ViewUser = () => {
     )
 };
 
-const MyUser = ( ) => {
-    
-    const [usuarioActiv, setuUsuarioActiv] = useState({})
-    const [checking, setChecking] = useState(true);
-    const { user } = useSelector( state => state.user)
-
-    const history = useHistory();
-
-
-    const cambiarInfo = (e) =>{
-        history.push('/CambiarInfo');
-    }
+const MyUser = () => {
+    const [update, setUpdate] = useState(true);
+    const [usuario, setUsuario] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
-       user.map((producto, index) => {
+        if (update) {
+            //funcion que trae los datos de la base de datos;
+            const t = findUser(id);
+            setUsuario(t);
+            setUpdate(false);
+        };
+    }, [update]);
 
-        setuUsuarioActiv(producto)
 
-        setTimeout(() => {
-             setChecking(false)
-         }, 1500);
-    })
-    }, [])
-
-    if (checking) {
-        return(
-            <div className="cargando">
-                <div class="preloader"></div>
-                <h1>Cargando informanción</h1>
-            </div>
-            
-            
-        )
-    }
 
     return (
         <div className="row">
             <div className="col-md-3">
-                <img src={m} alt="user" width="150px" />
+                <img src={usuario.imagen? usuario.imagen : m} alt="user" width="150px" />
             </div>
             <div className="col-md-9">
-                <h3 style={{ marginBottom: 20 }}><b>{usuarioActiv.nombre}</b></h3>
-                <h6>Email: {usuarioActiv.email}</h6>
-                <h6>Nombre: {usuarioActiv.nombre + " " + usuarioActiv.apellido}</h6>
-                <h6>Telefono: {usuarioActiv.telefono}</h6>
+                <h3 style={{ marginBottom: 20 }}><b>{usuario.nombre}</b></h3>
+                <h6>Email: {usuario.email}</h6>
+                <h6>Nombre: {usuario.nombre}</h6>
+                <h6>Id: {usuario.id}</h6>
+                <h6>Telefono: {usuario.telefono}</h6>
+                <h6>Genero: {usuario.genero}</h6>
             </div>
             <div className="col-sm-12 text-right">
-                <button className="btn btn-outline-success" onClick={cambiarInfo}>Editar Perfil</button>
+                <button className="btn btn-outline-success"onClick={()=>{EditPerfil()}}>Editar Perfil</button>
             </div>
         </div>
+
+
     )
+
+
+const EditPerfil = () =>{
+
+
+
+}
+
+
 };
 
+
+
+
+
+
+
 const Direcciones = () => {
-
-    const [usuarioActiv, setuUsuarioActiv] = useState({})
-    const [checking, setChecking] = useState(true);
-    const { user } = useSelector( state => state.user)
-
-
-    useEffect(() => {
-       user.map((producto, index) => {
-
-        setuUsuarioActiv(producto)
-
-        setTimeout(() => {
-             setChecking(false)
-         }, 1500);
-    })
-    }, [])
-
-    if (checking) {
-        return(
-            <div className="cargando">
-                <div class="preloader"></div>
-                <h1>Cargando informanción</h1>
-            </div>
-            
-            
-        )
-    }
-
     return (
         <div>
-         
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                    <th>Numero de direccion</th>
-                    <th>Pais</th>
-                    <th>Departamento</th>
-                    <th>Ciudad</th>
-                    <th>Carretera</th>
-                    <th>Telefono</th>
-                    <th>Numero de orden</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>1</td>
-                    <td>Honduras</td>
-                    <td>{usuarioActiv.departamento}</td>
-                    <td>{usuarioActiv.ciudad}</td>
-                    <td>{usuarioActiv.direccion}</td>
-                    <td>{usuarioActiv.telefono}</td>
-                    <td>1</td>
-                    </tr>
-                    
-                </tbody>
-            </Table>
-            
+            Mis Direcciones
         </div>
     )
 };
@@ -162,34 +109,35 @@ const Direcciones = () => {
 const Ordenes = () => {
     return (
         <div>
-            Mas resientes
-            <Table striped bordered hover>
+            Mas recientes
+            
+            <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
                     <th>#</th>
-                    <th>fecha</th>
-                    <th>hora</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
                     <th>Descripcion</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                     <td>1</td>
-                    <td>10/10/2021</td>
-                    <td>11:26 am</td>
-                    <td>Vestido color fusia, talla "M"</td>
+                    <td>13/12/2021</td>
+                    <td>10:30 AM</td>
+                    <td>Vestido de mujer, color ocre, talla "M"</td>
                     </tr>
                     <tr>
                     <td>2</td>
-                    <td>12/11/2021</td>
-                    <td>10:30 am</td>
-                    <td>Camisa de mujer color ocre talla "M"</td>
+                    <td>5/10/2021</td>
+                    <td>4:30 pm</td>
+                    <td>Vestido de mujer, color ocre, talla "M"</td>
                     </tr>
                     <tr>
                     <td>3</td>
-                    <td>10/12/2021</td>
-                    <td>4:30 pm</td>
-                    <td>Pantalon de hombre talla "36"</td>
+                    <td>25/9/2021</td>
+                    <td>12:15 md</td>
+                    <td>Vestido de mujer, color ocre, talla "M"</td>
                     </tr>
                 </tbody>
             </Table>

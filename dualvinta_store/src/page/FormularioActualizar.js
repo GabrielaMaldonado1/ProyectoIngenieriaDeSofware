@@ -1,55 +1,59 @@
 import { useState } from "react/cjs/react.development";
 import axios from "axios";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { UseStateUser } from "../hooks/UseStateUser";
+import { GetUserId, updateUserByUid } from "../hooks/UseAxiosGets";
+import { async } from "@firebase/util";
+import { useEffect } from "react";
 
-export const Formulario = () => {
-    const [todo, setTodo] = useState({
+export const FormularioActualizar = () => {
+    const [user, setUser] = useState({
+        uid: "",
         nombre: "",
+        email: "",
         apellido: "",
         departamento: "",
         ciudad: "",
         direccion: "",
         telefono: "",
-
     });
+
+    const { id } = useParams();
+
+    const { nombre, apellido, email, departamento, ciudad, direccion, telefono } = user;
 
     const userActive = UseStateUser();
     const history = useHistory();
     const [error, setError] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    useEffect(() => {
 
-        const { nombre, apellido, departamento, ciudad, direccion, telefono } = todo;
+        obetnerUsuario();
 
-        if (!nombre.trim() || !apellido.trim() || !departamento.trim() || !ciudad.trim() || !direccion.trim() || !telefono.trim()) {
-            setError(true);
-            return;
-        }
+    }, [])
 
-        setError(false);
+    const obetnerUsuario = async () => {
+        const response = await GetUserId(id);
 
-        console.log(todo);
+        const { nombre, apellido, departamento, ciudad, email, direccion, telefono, uid } = response[0];
 
-        setTodo({
-            nombre: "",
-            apellido: "",
-            departamento: "",
-            ciudad: "",
-            direccion: "",
-            telefono: "",
-
-
+        setUser({
+            nombre,
+            email,
+            apellido,
+            departamento,
+            ciudad,
+            direccion,
+            telefono,
+            uid
         });
-    };
+
+    }
 
     const handleChange = (e) => {
-        const { name, value, checked, type } = e.target;
-
-        setTodo({
-            ...todo,
-            [name]: type === "checkbox" ? checked : value,
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value,
         });
     };
 
@@ -57,30 +61,28 @@ export const Formulario = () => {
         <div className="alert alert-danger">Campos obligatorios</div>
     );
 
-    const registrar = (e) => {
-        e.preventDefault();
 
-        const infoGuardar = {
-            ...todo,
-            email: userActive.email,
-            uid: userActive.uid
+    const actualizar = async () => {
+        console.log(user);
+
+        // cambiar en este metodo la variable de user.id por el id de la otra forma que se obtenga
+        const res = await updateUserByUid(user.uid, user);
+        const { data, status } = res;
+
+        if (status === 200) {
+            console.log(data)
+            history.push("/infoUserRegistro");
         }
 
-        const url = "http://localhost:9000/api/users";
-
-        axios.post(url, infoGuardar);
-
-        history.push('/')
     }
+
 
     return (
 
         <>
-
-
             {error && <PintarError />}
 
-            <form onSubmit={registrar}>
+            <div >
                 <h3> Registro de usuario </h3>
                 <input
                     name="nombre"
@@ -88,7 +90,7 @@ export const Formulario = () => {
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.nombre}
+                    value={nombre}
                 />
                 <input
                     name="apellido"
@@ -96,7 +98,15 @@ export const Formulario = () => {
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.apellido}
+                    value={apellido}
+                />
+                <input
+                    name="email"
+                    placeholder=" departamento"
+                    type="text"
+                    className="form-control mb-2"
+                    onChange={handleChange}
+                    value={email}
                 />
                 <input
                     name="departamento"
@@ -104,7 +114,7 @@ export const Formulario = () => {
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.departamento}
+                    value={departamento}
                 />
                 <input
                     name="ciudad"
@@ -112,7 +122,7 @@ export const Formulario = () => {
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.ciudad}
+                    value={ciudad}
                 />
                 <input
                     name="direccion"
@@ -120,7 +130,7 @@ export const Formulario = () => {
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.direccion}
+                    value={direccion}
                 />
                 <input
                     name="telefono"
@@ -128,19 +138,19 @@ export const Formulario = () => {
                     type="text"
                     className="form-control mb-2"
                     onChange={handleChange}
-                    value={todo.telefono}
+                    value={telefono}
                 />
 
 
 
-                <button className="btn btn-primary" type="submit" >
-                    continuar
+                <button onClick={actualizar} className="btn btn-primary" type="submit" >
+                    Actualizar
                 </button>
-            </form>
+            </div>
         </>
 
     );
 };
 
-export default Formulario;
+export default FormularioActualizar;
 

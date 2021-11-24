@@ -2,25 +2,37 @@ import axios from "axios"
 
 
 
-export const BuscarCateoria = async ( categoria )  => {
+export const BuscarCateoria = async (categoria) => {
     const url = `http://localhost:9000/api/producto/${encodeURI(categoria)}`;
-    return await axios.get(url).then( (response) => {
+    return await axios.get(url).then((response) => {
 
 
         return response.data
     });
 }
 
-export const showAllItems = async ()  => {
+export const showAllItems = async () => {
     const url = `http://localhost:9000/api/producto`;
-    return await axios.get(url).then( (response) => {
+    return await axios.get(url).then((response) => {
         return response.data
     });
 }
 
-export const GetUserId = async ( uid )  => {
-    const url = `http://localhost:9000/api/users/${ uid }`;
-    return await axios.get(url).then( (response) => {
+export const GetUserId = async (uid) => {
+    const url = `http://localhost:9000/api/users/${uid}`;
+    return await axios.get(url).then((response) => {
         return response.data
     });
+}
+
+export const updateUserByUid = async (uid, data) => {
+
+    try {
+        const url = `http://localhost:9000/api/users/${uid}`;
+        const response = await axios.put(url, data);
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
+
 }

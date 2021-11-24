@@ -9,8 +9,6 @@ const DetallesUsuario = () => {
         <div>
             <Header seccion="none" titulo="PERFIL" />
             <ViewUser />
-        
-
         </div>
     )
 };

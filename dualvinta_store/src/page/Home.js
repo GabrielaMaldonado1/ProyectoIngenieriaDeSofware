@@ -9,7 +9,7 @@ import { BarraTips } from '../componentes/homeComponents/barraTips';
 import { OpcionesHome } from '../componentes/homeComponents/opciones';
 import { Nuevo_MasVendido } from '../componentes/homeComponents/nuevo_MasVendido';
 import Footer from '../componentes/Footer';
-import {UseStateUser} from '../hooks/UseStateUser';
+import { UseStateUser } from '../hooks/UseStateUser';
 import { login } from '../actions/auth';
 import { UserActiveLoggueado } from '../actions/user';
 
@@ -19,39 +19,39 @@ export const Home = () => {
 
     const dispatch = useDispatch();
 
-    const {data} = useSelector( state => state.producto)
+    const { data } = useSelector(state => state.producto)
 
 
-   const [checking, setChecking] = useState(true);
-   const [userCheck, setUserCheck] = useState(false);
+    const [checking, setChecking] = useState(true);
+    const [userCheck, setUserCheck] = useState(false);
 
-   const userActive = UseStateUser();
-    
+    const userActive = UseStateUser();
+
     useEffect(() => {
 
-         dispatch(showAllProducto());
+        dispatch(showAllProducto());
 
-         setTimeout(() => {
-             setChecking(false)
-             setUserCheck(true)
-         }, 1500);
-         
-        
-    }, [dispatch, setChecking ] )
+        setTimeout(() => {
+            setChecking(false)
+            setUserCheck(true)
+        }, 1500);
+
+
+    }, [dispatch, setChecking])
 
     if (checking) {
-        return(
+        return (
             <div className="cargando">
                 <div class="preloader"></div>
                 <h1>Abriendo la tienda</h1>
             </div>
-            
-            
+
+
         )
     }
 
 
-    if((userActive !== undefined) && userCheck){
+    if ((userActive !== undefined) && userCheck) {
 
         dispatch(login(userActive.uid, userActive.email));
 
@@ -59,7 +59,7 @@ export const Home = () => {
 
         setUserCheck(false)
 
-       
+
 
     }
 
@@ -73,15 +73,15 @@ export const Home = () => {
             <OpcionesHome />
             <Nuevo_MasVendido titulo="MAS VENDIDO" filtro="vendido" />
 
-        <Footer />
-            
-           
-            
+            <Footer />
+
+
+
         </div>
     )
 }
 
-/* 
+/*
 <LstProductos titulo="NUEVOS PRODUCTOS" data={data} />
 */
 
