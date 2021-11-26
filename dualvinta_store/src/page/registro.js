@@ -70,7 +70,7 @@ export const SignUp = () => {
                 </div>
                 <form className="formulario-login" onSubmit={handleSubmit}>
                                         
-                    <input type="email" className="email__login" name="email" placeholder="Correo Electronico" autoComplete="on" required
+                    <input type="email" className="email__login" name="email" placeholder="Correo Electronico" autoComplete="off" required
                         onChange={handleInputChange} ></input>
 
                     <input type="password" className="password__login" name="password" placeholder="Contraseña" autoComplete="off" required

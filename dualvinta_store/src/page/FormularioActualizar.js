@@ -83,6 +83,7 @@ export const FormularioActualizar = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={nombre}
+                    autoComplete="off"
                 />
                 <input
                     name="apellido"
@@ -91,6 +92,7 @@ export const FormularioActualizar = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={apellido}
+                    autoComplete="off"
                 />
                 <input
                     name="email"
@@ -99,6 +101,7 @@ export const FormularioActualizar = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={email}
+                    autoComplete="off"
                 />
                 <input
                     name="departamento"
@@ -107,6 +110,7 @@ export const FormularioActualizar = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={departamento}
+                    autoComplete="off"
                 />
                 <input
                     name="ciudad"
@@ -115,6 +119,7 @@ export const FormularioActualizar = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={ciudad}
+                    autoComplete="off"
                 />
                 <input
                     name="direccion"
@@ -123,6 +128,7 @@ export const FormularioActualizar = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={direccion}
+                    autoComplete="off"
                 />
                 <input
                     name="telefono"
@@ -131,6 +137,7 @@ export const FormularioActualizar = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={telefono}
+                    autoComplete="off"
                 />
 
 

@@ -93,6 +93,7 @@ export const Formulario = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={todo.nombre}
+                    autoComplete="off"
                 />
                 <input
                     name="apellido"
@@ -101,6 +102,7 @@ export const Formulario = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={todo.apellido}
+                    autoComplete="off"
                 />
                 <input
                     name="departamento"
@@ -109,6 +111,7 @@ export const Formulario = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={todo.departamento}
+                    autoComplete="off"
                 />
                 <input
                     name="ciudad"
@@ -117,6 +120,7 @@ export const Formulario = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={todo.ciudad}
+                    autoComplete="off"
                 />
                 <input
                     name="direccion"
@@ -125,6 +129,7 @@ export const Formulario = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={todo.direccion}
+                    autoComplete="off"
                 />
                 <input
                     name="telefono"
@@ -133,6 +138,7 @@ export const Formulario = () => {
                     className="form-control mb-2"
                     onChange={handleChange}
                     value={todo.telefono}
+                    autoComplete="off"
                 />
 
 
