@@ -3,7 +3,7 @@ import axios from "axios"
 
 
 export const BuscarCateoria = async (categoria) => {
-    const url = `http://localhost:9000/api/producto/${encodeURI(categoria)}`;
+    const url = `https://dualvinta.herokuapp.com/api/producto/${encodeURI(categoria)}`;
     return await axios.get(url).then((response) => {
 
 
@@ -12,14 +12,14 @@ export const BuscarCateoria = async (categoria) => {
 }
 
 export const showAllItems = async () => {
-    const url = `http://localhost:9000/api/producto`;
+    const url = `https://dualvinta.herokuapp.com/api/producto`;
     return await axios.get(url).then((response) => {
         return response.data
     });
 }
 
 export const GetUserId = async (uid) => {
-    const url = `http://localhost:9000/api/users/${uid}`;
+    const url = `https://dualvinta.herokuapp.com/api/users/${uid}`;
     return await axios.get(url).then((response) => {
         return response.data
     });
@@ -28,7 +28,7 @@ export const GetUserId = async (uid) => {
 export const updateUserByUid = async (uid, data) => {
 
     try {
-        const url = `http://localhost:9000/api/users/${uid}`;
+        const url = `https://dualvinta.herokuapp.com/api/users/${uid}`;
         axios.put(url, data);
     } catch (error) {
         console.log(error)
