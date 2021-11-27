@@ -1,6 +1,10 @@
 const productoRoutes = require("./routes/productoRouters");
 const userRoutes = require("./routes/user");
+require('dotenv').config();
 var cors = require('cors');
+
+
+console.log( process.env )
 
 const express = require('express');
 const mongoose = require("mongoose");
@@ -29,4 +33,4 @@ mongoose.connect("mongodb+srv://decsec26:contraseña123@cluster0.u4bcs.mongodb.n
     .then(() => console.log("conectado a mongodb"))
     .catch( (error) => console.log(error));
 
-app.listen(port, () => console.log('listo', port));
+app.listen( process.env.PORT, () => console.log('listo', process.env.PORT));
