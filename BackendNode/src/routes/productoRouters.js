@@ -10,7 +10,6 @@ const router = express.Router();
 router.post('/producto', (req, res) => {
     const producto = productoSchema( req.body );
     producto.save().then( (data) => res.json(data) ).catch( (error) => res.json({ message: error}));
-
 });
 
 //OBTENER TODOS LOS PRODUCTOS
