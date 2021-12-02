@@ -107,18 +107,19 @@ export const Login = () => {
     return (
         <section className="bg-login-registro">
         <div className="login">
+             
             <div className="Logo">
-                <img className="img_logo" src={LogoLogin} alt="Logo"></img>
+                        <img className="img_logo" src={LogoLogin} alt="Logo"></img>
             </div>
             <form className="formulario-login" onSubmit={ handleSubmit}>
-                <input type="email" className="email__login" name="email" placeholder="Correo Electronico" autoComplete="on" required
-                    onChange={handleInputChange} ></input>
+                        <input type="email" className="email__login" name="email" placeholder="Correo Electronico" autoComplete="on" required
+                            onChange={handleInputChange} ></input>
 
-                <input type="password" className="password__login" id="password" name="password" placeholder="Contraseña" autoComplete="off" required
-                    onChange={handleInputChange}></input>
-            
+                        <input type="password" className="password__login" id="password" name="password" placeholder="Contraseña" autoComplete="off" required
+                            onChange={handleInputChange}></input>
+                    
 
-                <input className="btn__login" type="submit" value="Iniciar Sesión"></input>
+                        <input className="btn__login" type="submit" value="Iniciar Sesión"></input>
 
             </form>
 

@@ -68,6 +68,8 @@ export const SignUp = () => {
                 <div className="Logo">
                     <img className="img_logo" src={LogoLogin} alt="Logo"></img>
                 </div>
+                <h1 className="texh">Configura tu cuenta</h1>
+                <h2 className="texhs">Paso 1 de 2 </h2>
                 <form className="formulario-login" onSubmit={handleSubmit}>
                                         
                     <input type="email" className="email__login" name="email" placeholder="Correo Electronico" autoComplete="off" required

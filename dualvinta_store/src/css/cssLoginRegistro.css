@@ -18,6 +18,7 @@
     background-size: cover;
 }
 
+
 .login, .registro{
   width: 410px;
   height: 465px;
@@ -31,6 +32,20 @@
   border-style: solid;
   
 }
+.login2{
+    width: 410px;
+    height: 475px;
+    position: absolute;
+    margin-top: 90px;
+    margin-left: 850px;
+    
+    background-color: #f5f5ef;
+    border: var(--alternativo);
+    border-radius: 10px;
+    border-style: solid;
+    
+  }
+
 
 .registro{
     margin-top: 70px;
@@ -41,12 +56,36 @@
     margin-top: 275px;
     margin-left: 40px;
 }
+.texh{
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family:  Arial;
+    font-size: 1.5rem;
+}
+.texhs{
+    text-align: center;
+}
+.texhh{
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family:  Arial;
+    font-size: 1.2rem;
+    margin-bottom: 0rem;
+}
 
 .img_logo{
     margin-top: 10px;
     margin-left: 10px;
+    margin-bottom: 5px;
 }
-
+.img_logos{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    width: 150px;
+}
 .formulario-login{
     position: absolute;
     margin-top: 25px;
@@ -76,6 +115,7 @@
     font-size: 17px;
 }
 
+
 .btn-show-password-login{
     width: 10%;
     border-radius: 20px;
@@ -97,6 +137,9 @@
 
 .email__login{
     margin-top: 15px;
+}
+.email__logins{
+    margin-top: 0px;
 }
 
 .btn__login, .btn__registro{
