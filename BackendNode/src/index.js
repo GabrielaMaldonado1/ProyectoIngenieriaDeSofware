@@ -18,7 +18,6 @@ app.use(cors())
 app.use('/api', productoRoutes);
 app.use('/api', userRoutes);
 
-
 app.use('/public', express.static(`${__dirname}/storage/img`));
 
 
