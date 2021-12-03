@@ -5,19 +5,33 @@ import "../../css/vendor/bootstrap/css/bootstrap.min.css";
 import "../../css/pages.css";
 import dbProductos, { searchByName, sortByDate } from "../../data/PruebaProductos";
 import { useSelector } from 'react-redux'
+import { getProductoByFilter } from "../../services/productos.service";
 
-export const LstProductoAllData = ( {titulo} ) => {
+export const LstProductoAllData = ({ titulo }) => {
 
+    const [d, setD] = useState([]);
+    const [upd, setUpd] = useState(false);
+    const { data } = useSelector(state => state.producto);
+    
+    async function search(e) {
+        const txt = e.target.value;
+        await getProductoByFilter(txt).then(v =>{
+            if(v){
+                if(v.data.successed){
+                    setD(v.data.data);
+                }else{
+                    setD([])
+                };
+            }
+        });
+    };
 
-    const {data} = useSelector( state => state.producto);
-
-    function search(e){
-        if(e.target.value === ""){
-           
-        };
-        const t = searchByName(data, e.target.value);
-       
-    }
+    useEffect(() => {
+        if (!upd) {
+            setD([]);
+            setUpd(true);
+        }
+    }, [upd, d]);
 
     return (
         <div className="container-fluid rounded shadow-sm nuevo_home">
@@ -30,16 +44,23 @@ export const LstProductoAllData = ( {titulo} ) => {
                 </div>
             </div>
             <hr style={{ backgroundColor: "#F5DA81" }} />
-            <div className="row" style={{}}>
-                {
-                
-                     data.map((producto, index) =>
-                         <ViewProducto key={index} element={producto} />
-                    )
-                
-                
-                }
-            </div>
+            {(d.length === 0) ?
+                <div className="row" style={{}}>
+                    {
+                        data.map((producto, index) =>
+                            <ViewProducto key={index} element={producto} />
+                        )
+                    }
+                </div>
+                :
+                <div className="row" style={{}}>
+                    {
+                        d.map((producto, index) => 
+                            <ViewProducto key={index} element={producto} />
+                        )
+                    }
+                </div>
+            }
         </div>
 
     )
