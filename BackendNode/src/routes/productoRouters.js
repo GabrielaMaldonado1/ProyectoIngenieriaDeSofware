@@ -27,6 +27,29 @@ router.get("/buscador/:id", (req, res) => {
     });
 });
 
+router.get("/productos_lesly/:id", (req, res) => {
+    var id = req.params.id;
+    if(id === "vacio"){
+        id = ""
+    }
+    productoSchema.find({'$and': [
+        {categoria:"Cuidado Personal"},
+        {'$or' : [
+            { name: { '$regex' : id, '$options' : 'i' } },
+            { categoria: { '$regex' : id, '$options' : 'i' } },
+            { marca: { '$regex' : id, '$options' : 'i' } },
+            { modelo: { '$regex' : id, '$options' : 'i' } },
+            { descripcion: { '$regex' : id, '$options' : 'i' } },
+        ] }
+    ]}, (err, data) => {
+        if (!err) {
+            res.status(200).json({successed:true, data:data})
+        }else{
+            res.status(200).json({successed:false, message: err.message})
+        };
+    });
+});
+
 //OBTENER TODOS LOS PRODUCTOS
 
 router.get('/producto', (req, res) => {

@@ -4,7 +4,7 @@ import ViewProducto from "./ViewProducto";
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
 import "../../css/pages.css";
 import dbProductos, { searchByName, sortByDate } from "../../data/PruebaProductos";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import { getProductoByFilter } from "../../services/productos.service";
 
 export const LstProductoAllData = ({ titulo }) => {

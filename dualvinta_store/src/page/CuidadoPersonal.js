@@ -8,11 +8,11 @@ import Footer from '../componentes/Footer';
 export const CuidadoPersonal = () => {
     return (
         <div>
-            <Header seccion="cuidado" titulo="CUIDADO PERSONAL"/>
+            <Header seccion="cuidado" titulo="CUIDADO PERSONAL" />
             <OpcCategorias />
 
-            <LstProductos titulo="Resultados Generales"/>
-        <Footer />
+            <LstProductos titulo="Cuidado Personal" />
+            <Footer />
 
         </div>
     )
