@@ -1,5 +1,6 @@
 const productoRoutes = require("./routes/productoRouters");
 const userRoutes = require("./routes/user");
+const CarroRoutes = require("./routes/CartRutas");
 require('dotenv').config();
 var cors = require('cors');
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(cors())
 app.use('/api', productoRoutes);
 app.use('/api', userRoutes);
+app.use('/api', CarroRoutes);
 
 app.use('/public', express.static(`${__dirname}/storage/img`));
 

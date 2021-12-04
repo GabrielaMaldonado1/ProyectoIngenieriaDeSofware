@@ -3,11 +3,14 @@ import { useParams } from "react-router";
 import { find } from "../../data/PruebaProductos";
 import carrito from "../../data/icons/carrito.png";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 const DetaProducts = () => {
 
     const { data } = useSelector(state => state.producto);
-
+    const { user } = useSelector(state => state.user);
+    
+    const [usuarioActiv, setuUsuarioActiv] = useState({});
     const [update, setUpdate] = useState(true);
     const [productoData, setProducto] = useState({});
     const { id } = useParams();
@@ -24,14 +27,30 @@ const DetaProducts = () => {
                 }
             }
             )
-            
+    
+        user.map((usuario, index) => {
 
+            setuUsuarioActiv(usuario)
+        })
+                
         };
     }, [update, id]);
 
     console.log(id +"  " + productoData)
 
     const { name, imgUrl, categoria, descripcion, marca, modelo, precio, existencias } = productoData;
+
+    const enviarCarro = () => {
+
+        const carroInfo = {
+            producto_id: id,
+            usuario_id: usuarioActiv._id
+        }
+
+        axios.post('https://dualvinta.herokuapp.com/api/carro',carroInfo );
+
+
+    }
 
     return (
         <div className="rounded shadow-sm container-fluid py-4" style={{ marginTop: 40 }}>
@@ -55,7 +74,7 @@ const DetaProducts = () => {
                         <h6>Exitencias: {existencias} Unidades </h6>
                         <hr style={{ backgroundColor: "#F5DA81" }} />
                         <div className="py-4">
-                            <button className="btn btn-outline-success" >
+                            <button className="btn btn-outline-success" onClick={enviarCarro}>
                                 <img src={carrito} alt="iconCarrito" />Agregar al Carrito
                             </button>
                         </div>

@@ -1,10 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { showCarroCompra } from '../actions/carroCompra';
 import { ItemCarroCompras } from '../componentes/carro de compra/itemCarroCompras'
 import Footer from '../componentes/Footer';
 import { Header } from '../componentes/Header/header'
 import '../css/cssCarrito.css';
+import { useDispatch, useSelector } from "react-redux";
 
 export const CarroCompras = () => {
+    
+    const dispatch = useDispatch();
+
+    const { data } = useSelector(state => state.carro)
+    const [usuarioActiv, setuUsuarioActiv] = useState({});
+    const [checking, setChecking] = useState(true);
+    const { user } = useSelector(state => state.user);
+
+    useEffect(() => {
+        
+        user.map((producto, index) => {
+
+            setuUsuarioActiv(producto)
+        })
+    
+    }, [])
+    
+
+    useEffect(() => {
+
+       dispatch(showCarroCompra(usuarioActiv._id))
+
+
+        setTimeout(() => {
+            setChecking(false)
+            
+        }, 1500);
+
+
+    }, [dispatch, setChecking])
+
+    if (checking) {
+        return (
+            <div className="cargando">
+                <div class="preloader"></div>
+                <h1>Cargando Carro de compras</h1>
+            </div>
+
+
+        )
+    }
+    
+    
     return (
         <>
 
@@ -92,8 +137,12 @@ export const CarroCompras = () => {
                 </div>
 
                 <div className="items__bodyCarrito column_carrito">
-                <ItemCarroCompras />
-                <ItemCarroCompras />
+                {
+                    data.map((producto, index) => {
+                        <ItemCarroCompras productoID={producto}/>
+                    })
+                }
+                
                 </div>
 
             </div>

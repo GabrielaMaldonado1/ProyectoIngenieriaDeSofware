@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { InfoItem } from './infoItem'
+import { useDispatch, useSelector } from "react-redux";
 
-export const ItemCarroCompras = () => {
+export const ItemCarroCompras = ({productoID}) => {
+    
+    const { data } = useSelector(state => state.producto);
+
+    const id = productoID.producto_id;
+    const [update, setUpdate] = useState(true);
+    const [productoData, setProducto] = useState({});
+
+    useEffect(() => {
+        if (update) {
+            setUpdate(false);
+
+            data.map((producto, index) => {
+
+                if ( producto._id === id) {
+
+                   setProducto(producto);
+                }
+            }
+            )
+     
+        };
+    }, [update, id]);
+    
+    
     return (
         
         <div className="column_carrito">
@@ -14,7 +39,7 @@ export const ItemCarroCompras = () => {
             </div>
 
             <div className="item_carrito">
-                <InfoItem />
+                <InfoItem producto={productoData}/>
             </div>
 
             <div className="diasEntrega">
@@ -22,7 +47,7 @@ export const ItemCarroCompras = () => {
             </div>
 
             <div className="precioindiv">
-                <p> 450.00 LPS.</p>
+                <p>{productoData.precio}</p>
             </div>
 
             <div className="precioTotal">

@@ -12,6 +12,7 @@ import Footer from '../componentes/Footer';
 import { UseStateUser } from '../hooks/UseStateUser';
 import { login } from '../actions/auth';
 import { UserActiveLoggueado } from '../actions/user';
+import { showCarroCompra } from '../actions/carroCompra';
 
 
 
@@ -58,8 +59,6 @@ export const Home = () => {
         dispatch(UserActiveLoggueado(userActive.uid));
 
         setUserCheck(false)
-
-
 
     }
 
