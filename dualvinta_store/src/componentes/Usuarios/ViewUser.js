@@ -7,6 +7,7 @@ import m from "../../data/img/usuarios_image/user.png"
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
 import { Table } from 'react-bootstrap';
 import { useSelector } from "react-redux";
+import { subirFotoAPi } from '../../services/usuarios.service';
 
 const ViewUser = () => {
 
@@ -49,7 +50,8 @@ const MyUser = () => {
 
     const [usuarioActiv, setuUsuarioActiv] = useState({})
     const [checking, setChecking] = useState(true);
-    const { user } = useSelector(state => state.user)
+    const { user } = useSelector(state => state.user);
+    const [urlImagen, setUrlImagen] = useState(null)
 
     const history = useHistory();
 
@@ -79,11 +81,32 @@ const MyUser = () => {
         )
     }
 
+    const subirFoto = async () => {
+        document.getElementById('img-perfil').click();
+    }
+
+    const obtenerFoto = async (e) => {
+        const formData = new FormData();
+
+        formData.append('imagen', e.target.files[0]);
+
+        const response = await subirFotoAPi(formData, usuarioActiv.uid);
+
+        if (response.status == 200) {
+
+            setUrlImagen(response.data.urlImagen);
+            usuarioActiv.urlImagen = response.data.urlImagen;
+            console.log(response)
+        }
+
+    }
 
     return (
         <div className="row">
-            <div className="col-md-3">
-                <img src={m} alt="user" width="150px" />
+            <div className="col-md-3 text-center">
+                <img src={`http://localhost:9000/api/users/img-perfil/${usuarioActiv.urlImagen}`} alt="user" width="150px" />
+                <button onClick={subirFoto} className="btn btn-sm btn-warning m-2 btn-block" >Actualizar foto</button>
+                <input onChange={obtenerFoto} type="file" className="d-none" id="img-perfil" />
             </div>
             <div className="col-md-9">
                 <h3 style={{ marginBottom: 20 }}><b>{usuarioActiv.nombre}</b></h3>
@@ -122,49 +145,49 @@ const Direcciones = () => {
         setTimeout(() => {
             setChecking(false)
         }, 1500);
-    
+
     }, [])
 
-if (checking) {
+    if (checking) {
+        return (
+            <div className="cargando">
+                <div class="preloader"></div>
+                <h1>Cargando informanción</h1>
+            </div>
+
+
+        )
+    }
+
     return (
-        <div className="cargando">
-            <div class="preloader"></div>
-            <h1>Cargando informanción</h1>
-        </div>
-
-
-    )
-}
-
-return (
-    <div>
-      <Table striped bordered hover>
+        <div>
+            <Table striped bordered hover>
                 <thead>
                     <tr>
-                    <th>Numero de direccion</th>
-                    <th>Pais</th>
-                    <th>Departamento</th>
-                    <th>Ciudad</th>
-                    <th>Carretera</th>
-                    <th>Telefono</th>
-                    <th>Numero de orden</th>
+                        <th>Numero de direccion</th>
+                        <th>Pais</th>
+                        <th>Departamento</th>
+                        <th>Ciudad</th>
+                        <th>Carretera</th>
+                        <th>Telefono</th>
+                        <th>Numero de orden</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <td>1</td>
-                    <td>Honduras</td>
-                    <td>{usuarioActiv.departamento}</td>
-                    <td>{usuarioActiv.ciudad}</td>
-                    <td>{usuarioActiv.direccion}</td>
-                    <td>{usuarioActiv.telefono}</td>
-                    <td>1</td>
+                        <td>1</td>
+                        <td>Honduras</td>
+                        <td>{usuarioActiv.departamento}</td>
+                        <td>{usuarioActiv.ciudad}</td>
+                        <td>{usuarioActiv.direccion}</td>
+                        <td>{usuarioActiv.telefono}</td>
+                        <td>1</td>
                     </tr>
-                    
+
                 </tbody>
             </Table>
-    </div>
-)
+        </div>
+    )
 
 };
 

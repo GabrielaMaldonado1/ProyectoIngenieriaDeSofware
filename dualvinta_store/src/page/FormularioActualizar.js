@@ -11,7 +11,7 @@ import Logo from '../data/img/DUALVINTA.png'
 
 
 export const FormularioActualizar = () => {
-    
+
     const [usuarioActiv, setuUsuarioActiv] = useState({});
     const { user } = useSelector(state => state.user);
 
@@ -20,12 +20,12 @@ export const FormularioActualizar = () => {
 
             setuUsuarioActiv(producto)
         })
-    
+
     }, [])
 
 
     const [userA, setUser] = useState({
-        
+
         nombre: usuarioActiv.nombre,
         apellido: usuarioActiv.apellido,
         email: usuarioActiv.email,
@@ -43,7 +43,7 @@ export const FormularioActualizar = () => {
     const history = useHistory();
     const [error, setError] = useState(false);
 
-  
+
     const handleChange = (e) => {
         setUser({
             ...userA,
@@ -61,7 +61,7 @@ export const FormularioActualizar = () => {
 
         // cambiar en este metodo la variable de user.id por el id de la otra forma que se obtenga
         updateUserByUid(uid, userA);
-      history.push('/')
+        history.push('/')
 
 
     }
@@ -73,7 +73,7 @@ export const FormularioActualizar = () => {
             {error && <PintarError />}
 
             <img className="imgformact" src={Logo} alt="Logo" />
-            
+
             <div className="FormularioCambiarInfo">
                 <h3> Actualizar informanción </h3>
                 <input

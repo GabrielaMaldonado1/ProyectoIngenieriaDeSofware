@@ -32,6 +32,10 @@ const userSchema = mongoose.Schema({
     uid:{
         type: String,
         required: true
+    },
+    urlImagen:{
+        type: String,
+        default : "https://www.pngitem.com/pimgs/m/361-3619018_imagen-de-perfil-gmail-hd-png-download.png"
     }
 });
 
