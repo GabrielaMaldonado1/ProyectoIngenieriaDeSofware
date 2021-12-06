@@ -3,6 +3,8 @@ import { InfoItem } from './infoItem'
 import { useDispatch, useSelector } from "react-redux";
 
 export const ItemCarroCompras = ({productoID}) => {
+
+    console.log("1")
     
     const { data } = useSelector(state => state.producto);
 

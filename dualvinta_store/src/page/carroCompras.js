@@ -5,50 +5,25 @@ import Footer from '../componentes/Footer';
 import { Header } from '../componentes/Header/header'
 import '../css/cssCarrito.css';
 import { useDispatch, useSelector } from "react-redux";
+import { getCarroCompras } from '../hooks/UseAxiosGets';
+import { UseStateUser } from '../hooks/UseStateUser';
+import { useHistory } from 'react-router';
 
 export const CarroCompras = () => {
     
-    const dispatch = useDispatch();
+    const history = useHistory();
 
     const { data } = useSelector(state => state.carro)
-    const [usuarioActiv, setuUsuarioActiv] = useState({});
-    const [checking, setChecking] = useState(true);
-    const { user } = useSelector(state => state.user);
 
-    useEffect(() => {
-        
-        user.map((producto, index) => {
+    const [Usuario, setUsuario] = useState({})
 
-            setuUsuarioActiv(producto)
-        })
-    
-    }, [])
-    
+    const userActive = UseStateUser();
 
-    useEffect(() => {
+    console.log(data)
 
-       dispatch(showCarroCompra(usuarioActiv._id))
-
-
-        setTimeout(() => {
-            setChecking(false)
-            
-        }, 1500);
-
-
-    }, [dispatch, setChecking])
-
-    if (checking) {
-        return (
-            <div className="cargando">
-                <div class="preloader"></div>
-                <h1>Cargando Carro de compras</h1>
-            </div>
-
-
-        )
+    const pagar = () =>{
+        history.push('/pagar')
     }
-    
     
     return (
         <>
@@ -107,7 +82,7 @@ export const CarroCompras = () => {
                         <p>Cualquier problema en la entrega de su producto por favor comunicarse al numero <b>+504 8457-85XX</b> </p>
                     </div>
 
-                    <div className="BotonPagar">
+                    <div className="BotonPagar" onClick={pagar}>
                         <a>PAGAR</a>
                     </div>
                 </div>
@@ -138,9 +113,12 @@ export const CarroCompras = () => {
 
                 <div className="items__bodyCarrito column_carrito">
                 {
-                    data.map((producto, index) => {
-                        <ItemCarroCompras productoID={producto}/>
-                    })
+                    data.map((producto, index) =>
+
+                        
+                            <ItemCarroCompras productoID={producto}/>
+                        
+                    )
                 }
                 
                 </div>

@@ -2,9 +2,10 @@ import { getCarroCompras } from "../hooks/UseAxiosGets";
 import { UseAxiosCategoria } from "../hooks/UseAxiosLimit"
 import { types } from "../types/types"
 
-export const showCarroCompra = (userId) => {
+export const showCarroCompra = () => {
+  
     return (dispatch) => {
-        getCarroCompras(userId).then((response) => {
+        getCarroCompras().then((response) => {
 
             dispatch(showCarro(response))
 

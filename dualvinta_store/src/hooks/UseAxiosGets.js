@@ -37,9 +37,9 @@ export const updateUserByUid = async (uid, data) => {
 
 }
 
-export const getCarroCompras = async (userId) =>{
+export const getCarroCompras = async () =>{
 
-    const url = `https://dualvinta.herokuapp.com/api/carro/${userId}`
+    const url = `https://dualvinta.herokuapp.com/api/carroItems`
 
     return await axios.get(url).then( (response) =>{
         return response.data;

@@ -31,6 +31,7 @@ export const Home = () => {
     useEffect(() => {
 
         dispatch(showAllProducto());
+         dispatch(showCarroCompra());
 
         setTimeout(() => {
             setChecking(false)
