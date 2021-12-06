@@ -1,3 +1,4 @@
+import { async } from "@firebase/util";
 import axios from "axios"
 
 
@@ -33,5 +34,15 @@ export const updateUserByUid = async (uid, data) => {
     } catch (error) {
         console.log(error)
     }
+
+}
+
+export const getCarroCompras = async () =>{
+
+    const url = `https://dualvinta.herokuapp.com/api/carroItems`
+
+    return await axios.get(url).then( (response) =>{
+        return response.data;
+    })
 
 }

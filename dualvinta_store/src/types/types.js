@@ -8,5 +8,7 @@ export const types = {
     login: '[Auth] Login',
     logout: '[Auth] Logout',
 
-    userActivo: '[User] UserActive'
+    userActivo: '[User] UserActive',
+
+    carroCompra: '[Carro] CarroItems'
 }

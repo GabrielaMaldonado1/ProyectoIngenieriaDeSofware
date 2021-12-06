@@ -1,5 +1,9 @@
 const productoRoutes = require("./routes/productoRouters");
 const userRoutes = require("./routes/user");
+const CarroRoutes = require("./routes/CartRutas");
+const serverIndex = require('serve-index');
+
+
 require('dotenv').config();
 var cors = require('cors');
 
@@ -8,16 +12,20 @@ console.log( process.env )
 
 const express = require('express');
 const mongoose = require("mongoose");
+const fileUpload = require("express-fileupload");
+
 
 const app = express();
 
 const port = 9000;
 
+app.use('/files', serverIndex(__dirname + '/src/files'));
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+app.use(fileUpload());
 app.use('/api', productoRoutes);
 app.use('/api', userRoutes);
-
+app.use('/api', CarroRoutes);
 
 app.use('/public', express.static(`${__dirname}/storage/img`));
 
