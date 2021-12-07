@@ -21,6 +21,7 @@ import { ProductoOpcCategoriaFiltro } from '../page/productoOpcCaregoria';
 import { CarroCompras } from '../page/carroCompras';
 import { Pagar } from '../page/pagar';
 import { Calzado } from '../page/calzado';
+import { ResultadosBuscar } from '../page/resultadosBuscar';
 
 
 export const AppRouters = () => {
@@ -42,6 +43,7 @@ export const AppRouters = () => {
                     <Route exact path="/infoUserRegistro" component={Formulario} />
                     <Route exact path="/actualizar-usuario/:uid" component={FormularioActualizar} />
                     <Route exact path="/resultadoCategoria/:filtro" component={ResultadoCategoriaGeneral} />
+                    <Route exact path="/resultadoBuscar/:filtro" component={ResultadosBuscar} />
                     <Route exact path="/resultadoOpcCategoria/:filtro/:categoria" component={ProductoOpcCategoriaFiltro} />
                     <Route exact path="/carroCompras" component={CarroCompras} />
                     <Route exact path="/pagar" component={Pagar} />

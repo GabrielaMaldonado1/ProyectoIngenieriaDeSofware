@@ -221,3 +221,50 @@
   margin-left: 5px;
 }
 
+.form-row input{
+    left:50px;
+    width: 35%;
+ 
+  }
+  .form-row notes{ 
+    left:25px;
+    width: 10%;
+    
+ 
+  }
+
+
+  /* PAGAR */
+
+  .division_pagar_general{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .datos_col1_pagar{
+    margin-top: 30px;
+    margin-left: 150px;
+  }
+
+  .detalles_table_shop{
+    margin-top: 30px;
+    margin-left: 450px;
+  }
+
+  .form-control_pagar{
+    position: absolute;
+    width: 100px;
+    margin-left: 280px;
+  }
+
+  .btn_margin_pagar{
+    margin-left: 250px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+
+  .select_pagar_pais{
+     position: absolute;
+   
+    margin-left: 280px;
+  }

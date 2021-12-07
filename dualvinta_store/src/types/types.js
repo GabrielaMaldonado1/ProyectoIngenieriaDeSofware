@@ -10,5 +10,8 @@ export const types = {
 
     userActivo: '[User] UserActive',
 
-    carroCompra: '[Carro] CarroItems'
+    carroCompra: '[Carro] CarroItems',
+
+    cargado: '[loading] Cargado',
+    nocargado: '[loading] NoCargado'
 }

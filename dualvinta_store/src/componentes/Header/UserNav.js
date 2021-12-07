@@ -53,8 +53,8 @@ export const HeaderNavUser = () => {
       <div className="user-menu">
         <ul className="menu-usuario">
           <li><Link to="/MiCuenta">Mi Cuenta</Link></li>
-          <li><a href="#">Carro de Compras</a> </li>
-          <li><a href="#">Pagar</a> </li>
+          <li><Link to="/carroCompras">Carro de Compras</Link> </li>
+          <li><Link to="/pagar">Pagar</Link> </li>
           <Logguedo active={userActive} />
         </ul>
         <ul className="Social-header">

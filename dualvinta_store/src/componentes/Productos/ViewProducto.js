@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
@@ -6,6 +7,9 @@ import carrito from "../../data/icons/carrito.png";
 
 
 const ViewProducto = ({ element }) => {
+
+     
+
     return (
         <div className="rounded col-md-2 py-2" style={{}}>
             <div className="rounded shadow-sm" style={{ borderStyle: "solid", borderWidth: 1, borderColor: "#F5DA81" }}>

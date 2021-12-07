@@ -13,6 +13,7 @@ import { UseStateUser } from '../hooks/UseStateUser';
 import { login } from '../actions/auth';
 import { UserActiveLoggueado } from '../actions/user';
 import { showCarroCompra } from '../actions/carroCompra';
+import { cargadoAction } from '../actions/loading';
 
 
 
@@ -21,6 +22,8 @@ export const Home = () => {
     const dispatch = useDispatch();
 
     const { data } = useSelector(state => state.producto)
+    
+    const { cargado } = useSelector(state => state.cargado)
 
 
     const [checking, setChecking] = useState(true);
@@ -41,7 +44,7 @@ export const Home = () => {
 
     }, [dispatch, setChecking])
 
-    if (checking) {
+    if (checking && !cargado) {
         return (
             <div className="cargando">
                 <div class="preloader"></div>
@@ -60,6 +63,8 @@ export const Home = () => {
         dispatch(UserActiveLoggueado(userActive.uid));
 
         setUserCheck(false)
+
+        dispatch(cargadoAction(true))
 
     }
 

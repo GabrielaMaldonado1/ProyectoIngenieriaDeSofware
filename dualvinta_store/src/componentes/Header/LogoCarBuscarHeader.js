@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../../data/img/DUALVINTA.png'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 export const HeaderLogo = () => {
 
+    const history = useHistory();
+
+    const [formState, setFormState] = useState({
+        search: ''
+    });
+
+
+    const { search } = formState;
+
+    const handleInputChange = ({ target }) => {
+
+        setFormState({
+            ...formState,
+            [target.name]: target.value
+        });
+
+    };
+
+    const buscar = () =>{ 
+
+        history.push(`/resultadoBuscar/${search}`)
+    }
     
     return (
 
@@ -26,8 +49,8 @@ export const HeaderLogo = () => {
                         </ul>
                     </li>
                     <li className="buscador">
-                        <form>
-                            <input type="search" className="input_buscar" placeholder="Buscalo aqui"></input>
+                        <form onSubmit={buscar}>
+                            <input type="search" className="input_buscar" name="search" onChange={handleInputChange} placeholder="Buscalo aqui"></input>
                             <input type="submit" className="input_btn_buscar" value="Buscar"></input>
                         </form>
                     </li>
