@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const query = "http://localhost:9000/api";
+const query = "https://dualvinta.herokuapp.com/api";
 
 export function getProductoByFilter(id) {
     return axios.get(`${query}/buscador/${id}`)

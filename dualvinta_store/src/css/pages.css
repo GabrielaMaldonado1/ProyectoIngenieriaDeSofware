@@ -20,6 +20,19 @@
 
 .text-center{
   text-align: center;
+
+}
+
+.icon_more{
+  margin-top: 5px;
+}
+
+.Titulo_home{
+  font-size: 25px;
+  font-family: monospace;
+  color: var(--alternativo);
+  margin-left: 85px;
+  
 }
 
 .preloader {

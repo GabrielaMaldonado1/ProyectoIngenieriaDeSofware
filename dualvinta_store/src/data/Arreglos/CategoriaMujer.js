@@ -14,47 +14,55 @@ const dbCategoriaMujer = [
         id:"1",
         nombreCat: "camiseta",
         img: camisetas,
+        categoria: "Ropa%20Femenina"
     },
     {
         id:"2",
         nombreCat: "blusa",
         img: blusas,
-
+        categoria: "Ropa%20Femenina"
     },
     {
         id:"3",
         nombreCat: "falda",
         img: faldas,
+        categoria: "Ropa%20Femenina"
     },
     {
         id:"4",
         nombreCat: "pantalon",
         img: pantalones,
+        categoria: "Ropa%20Femenina"
     },
     {
         id:"5",
         nombreCat: "vestido",
         img: vestidos,
+        categoria: "Ropa%20Femenina"
     },
     {
         id:"6",
         nombreCat: "legging",
         img: deportivo,
+        categoria: "Ropa%20Femenina"
     },
     {
         id:"7",
         nombreCat: "abrigo",
         img: abrigos,
+        categoria: "Ropa%20Femenina"
     },
     {
         id:"8",
         nombreCat: "short",
         img: shorts,
+        categoria: "Ropa%20Femenina"
     },
     {
         id:"9",
         nombreCat: "pijama",
         img: pijamas,
+        categoria: "Ropa%20Femenina"
     }          
 ]
 

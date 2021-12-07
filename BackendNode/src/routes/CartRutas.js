@@ -38,7 +38,7 @@ router.put('/producto/:id', (req, res) => {
 
 // BORRAR
 
-router.delete('/producto/:id', (req, res) => {
+router.delete('/carroItem/:id', (req, res) => {
     const { id } = req.params;
     productoSchema.remove({ _id: id }).then( (data) => res.json(data)).catch( (error) => res.json({ message: error}));
 

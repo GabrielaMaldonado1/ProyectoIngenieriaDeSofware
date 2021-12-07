@@ -4,8 +4,12 @@ import { find } from "../../data/PruebaProductos";
 import carrito from "../../data/icons/carrito.png";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { CargarDatos } from "../../hooks/cargarDatos";
+import { showCarroCompra } from "../../actions/carroCompra";
 
 const DetaProducts = () => {
+
+    const dispatch = useDispatch();
 
     const { data } = useSelector(state => state.producto);
     const { user } = useSelector(state => state.user);
@@ -44,10 +48,16 @@ const DetaProducts = () => {
 
         const carroInfo = {
             producto_id: id,
-            usuario_id: usuarioActiv._id
+            usuario_id: usuarioActiv._id,
+            precio: precio,
+            cantidad: 1
         }
 
         axios.post('https://dualvinta.herokuapp.com/api/carro',carroInfo );
+
+        
+
+        alert("Producto Agregado");
 
 
     }

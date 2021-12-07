@@ -7,19 +7,19 @@ import dbProductos, { searchByName, sortByDate } from "../../data/PruebaProducto
 import { useSelector } from 'react-redux';
 import { getProductoByFilter } from "../../services/productos.service";
 
-export const LstProductoAllData = ({ titulo }) => {
+export const LstProductoAllData = ({ titulo, filtro, filtro2="none" }) => {
 
     const [d, setD] = useState([]);
     const [upd, setUpd] = useState(false);
     const { data } = useSelector(state => state.producto);
-    
+
     async function search(e) {
         const txt = e.target.value;
-        await getProductoByFilter(txt).then(v =>{
-            if(v){
-                if(v.data.successed){
+        await getProductoByFilter(txt).then(v => {
+            if (v) {
+                if (v.data.successed) {
                     setD(v.data.data);
-                }else{
+                } else {
                     setD([])
                 };
             }
@@ -47,16 +47,27 @@ export const LstProductoAllData = ({ titulo }) => {
             {(d.length === 0) ?
                 <div className="row" style={{}}>
                     {
-                        data.map((producto, index) =>
-                            <ViewProducto key={index} element={producto} />
-                        )
+                        data.map((producto, index) => {
+                            
+                            if (producto.categoria === filtro) {
+                                return <ViewProducto key={index} element={producto} />
+                            } else if (producto.categoria === filtro2) {
+                                return <ViewProducto key={index} element={producto} />
+                            }
+                        })
                     }
                 </div>
                 :
                 <div className="row" style={{}}>
                     {
-                        d.map((producto, index) => 
-                            <ViewProducto key={index} element={producto} />
+                        d.map((producto, index) =>{
+                            if (producto.categoria === filtro) {
+                                return <ViewProducto key={index} element={producto} />
+                            } else if (producto.categoria === filtro2) {
+                                return <ViewProducto key={index} element={producto} />
+                            }
+                        }
+                          
                         )
                     }
                 </div>

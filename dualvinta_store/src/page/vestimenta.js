@@ -10,10 +10,8 @@ export const Vestimenta = () => {
     return (
         <div>
             <Header seccion="vestimenta" titulo="VESTIMENTA" />
-            
-            <OpcCategorias />
-
-            <LstProductoAllData titulo="Resultados Generales"/>
+ 
+           <LstProductoAllData titulo="VISTETE A LA MODA CON DUALVINTA" filtro="Ropa Masculina" filtro2="Ropa Femenina"/>
         <Footer />
             
         </div>

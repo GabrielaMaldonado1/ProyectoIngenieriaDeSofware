@@ -8,6 +8,14 @@ const carroSchema = mongoose.Schema({
     usuario_id: {
         type:String,
         required: true
+    },
+    precio: {
+        type: Number,
+        required: true
+    },
+    cantidad: {
+        type:Number,
+        required: true
     }
 });
 

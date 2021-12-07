@@ -24,7 +24,7 @@ export const LstProductoFiltro = ( { filtro, categoria} ) => {
         <div className="container-fluid rounded shadow-sm nuevo_home">
             <div className="row">
                 <div className="col-md-8 py-3">
-                    <h3 className="Titulo_home"><b>{filtro}</b></h3>
+                    <h3 className="Titulo_home"><b> RESULTADOS: </b></h3>
                 </div>
                 <div className="col-md-4 py-3">
                     <input className="form-control search_secciones_home" placeholder="Busqueda" onChange={search} />

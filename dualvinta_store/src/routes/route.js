@@ -20,6 +20,7 @@ import { ResultadoCategoriaGeneral } from '../page/resultadoCategoriaGeneral';
 import { ProductoOpcCategoriaFiltro } from '../page/productoOpcCaregoria';
 import { CarroCompras } from '../page/carroCompras';
 import { Pagar } from '../page/pagar';
+import { Calzado } from '../page/calzado';
 
 
 export const AppRouters = () => {
@@ -44,6 +45,7 @@ export const AppRouters = () => {
                     <Route exact path="/resultadoOpcCategoria/:filtro/:categoria" component={ProductoOpcCategoriaFiltro} />
                     <Route exact path="/carroCompras" component={CarroCompras} />
                     <Route exact path="/pagar" component={Pagar} />
+                    <Route exact path="/calzado" component={Calzado} />
 
                 </Switch>
             </AuthProvider>

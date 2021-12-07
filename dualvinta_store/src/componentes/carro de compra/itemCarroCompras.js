@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { InfoItem } from './infoItem'
 import { useDispatch, useSelector } from "react-redux";
+import axios from 'axios';
+import { useHistory } from 'react-router';
 
 export const ItemCarroCompras = ({productoID}) => {
 
-    console.log("1")
+    const history = useHistory();
     
     const { data } = useSelector(state => state.producto);
 
@@ -27,6 +29,15 @@ export const ItemCarroCompras = ({productoID}) => {
      
         };
     }, [update, id]);
+
+    const remover = () => {
+        axios.delete(`https://dualvinta.herokuapp.com/api/carroItem/${productoID._id}`)
+
+        setTimeout(() => {
+            history.replace("carroCompras")
+        }, 500);
+
+    }
     
     
     return (
@@ -36,8 +47,8 @@ export const ItemCarroCompras = ({productoID}) => {
 <div className="itemCarro row_carrito">
 
             <div className="cantidad column_carrito">
-                <input className="CantidadNumber" type="number"></input>
-                <input className="RemoverItem" type="button" value="Remover"></input>
+                <input className="CantidadNumber" type="number" value="1"></input>
+                <input className="RemoverItem" type="button" value="Remover" onClick={remover}></input>
             </div>
 
             <div className="item_carrito">

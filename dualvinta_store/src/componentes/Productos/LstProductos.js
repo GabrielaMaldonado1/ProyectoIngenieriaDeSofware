@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import "../../css/vendor/bootstrap/css/bootstrap.min.css";
 import { getProductoCuidadoByFilter, gp } from "../../services/productos.service";
@@ -8,14 +9,11 @@ var LstProductos = ({ titulo, filtro }) => {
 
     const [productos, SetProductos] = useState([]);
     const [update, setUpdate] = useState(true);
+    const { data } = useSelector(state => state.producto)
 
     useEffect(() => {
         if (update) {
-            gp("vacio").then(v=>{
-                if(v.data.successed){
-                    SetProductos(v.data.data);
-                };
-            });
+            SetProductos(data);
             setUpdate(false);
         };
     }, [update, productos]);
@@ -45,9 +43,17 @@ var LstProductos = ({ titulo, filtro }) => {
             <hr style={{ backgroundColor: "#F5DA81" }} />
             <div className="row" style={{}}>
                 {
-                    productos.map((producto, index) => 
-                        <ViewProducto key={index} element={producto} />
-                    )
+                    productos.map((producto, index) => {
+
+                        if (producto.nuevo === filtro) {
+                         return <ViewProducto key={index} element={producto} />   
+                            
+                        }else if (producto.vendido === filtro){
+                           return  <ViewProducto key={index} element={producto} />
+                           
+                        }
+                        
+                    })
                 }
             </div>
         </div>

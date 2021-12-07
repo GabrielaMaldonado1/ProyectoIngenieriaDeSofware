@@ -23,9 +23,9 @@ export const NavegacionPaginas = ( {seccion} ) => {
             <Link className={ verificar("categorias") } to="/categorias" >Categorias</Link>
             <Link className={ verificar("cuidado") } to="/cuidado">Cuidado personal</Link>
             <Link className={ verificar("vestimenta") } to="/vestimenta" >Vestimenta</Link>
-            <a className={ verificar("calzado") } href="#">Calzado</a>
+            <Link className={ verificar("calzado") } to="/calzado">Calzado</Link>
             <Link className={ verificar("carrito") } to="/carroCompras">Carrito de compras</Link>
-            <a className={ verificar("nosotros") } href="/nosotros">Nosotros</a>
+            <Link className={ verificar("nosotros") } to="/nosotros">Nosotros</Link>
         </nav>
        </div>
         
